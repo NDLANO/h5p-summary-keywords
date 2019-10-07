@@ -36,7 +36,7 @@ function Export() {
             "",
             translations.selectAll,
             translations.export,
-            "http://contentauthor.local/exportTemplate.docx", //H5P.instances[0].getLibraryFilePath('exportTemplate.docx'),
+            H5P.instances[0].getLibraryFilePath('exportTemplate.docx'),
             exportObject
         );
         exportDocument.getElement().prependTo(exportContainer.current);
