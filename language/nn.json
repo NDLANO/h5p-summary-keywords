@@ -7,18 +7,6 @@
       "label": "Beskrivelse"
     },
     {
-      "label": "Påstander",
-      "entity": "påstand",
-      "field": {
-        "label": "Påstand",
-        "description": "Påstand som brukeren skal ta stilling til"
-      }
-    },
-    {
-      "label": "Antall landingsfelter",
-      "description": "Hvor mange landingsfelter skal brukeren ta stilling til?"
-    },
-    {
       "label": "Ressurser",
       "description": "Valgfrie lenker til ressurser."
     },
@@ -31,34 +19,14 @@
           "description": "Kryss av hvis du vil at brukeren skal kunne besvare på nytt"
         },
         {
-          "label": "Forhåndsutfyll påstandene",
-          "description": "Når brukeren starter er påstandene ferdig plassert i rekkefølge"
-        },
-        {
-          "label": "Sett inn påstandende i tilfeldig rekkefølge",
-          "description": "Skal påstandene vises i tilfeldig rekkefølge?"
-        },
-        {
-          "label": "La brukeren legge inn egne påstander",
-          "description": "Lar brukeren opprette sine egne påstander"
-        },
-        {
-          "label": "Vis kommentarer under påstanden",
-          "description": "Hvis brukeren har skrevet en kommentar, vis denne i listen med påstander"
+          "label": "Antall nøkkelord",
+          "description": "Hvor mange landingsfelter skal brukeren ta stilling til?"
         }
       ]
     },
     {
       "label": "Localize",
       "fields": [
-        {
-          "label": "Begrunnelse",
-          "default": "Begrunnelse"
-        },
-        {
-          "label": "Midlertidig tekst for tekstfeltene",
-          "default": "Skriv en begrunnelse for dine svar"
-        },
         {
           "label": "Tekst på \"Ressurs\"-knappen",
           "default": "Ressurser"
@@ -68,8 +36,8 @@
           "default": "Start på nytt"
         },
         {
-          "label": "Tekst på \"Lag alternativ\"-knappen",
-          "default": "Lag alternativ"
+          "label": "Tekst på \"Lag nytt nøkkelord\"-knappen",
+          "default": "Lag nytt nøkkelord"
         },
         {
           "label": "Tekst på \"Ja\"-knappen",
@@ -86,6 +54,18 @@
         {
           "label": "Spør brukeren om vedkommende vil fortsette",
           "default": "Er du sikker?"
+        },
+        {
+          "label": "Tekst som viser antall gjennstående nøkkelord",
+          "default": ":num gjenstående nøkkelord"
+        },
+        {
+          "label": "Overskrift for essay",
+          "default": "Essay"
+        },
+        {
+          "label": "Plassholder for nøkkelord",
+          "default": "Skriv et nøkkelord..."
         }
       ]
     },
@@ -93,8 +73,8 @@
       "label": "Ressursrapport",
       "fields": [
         {
-          "label": "Tekst på \"Opprett dokument\"-knappen",
-          "default": "Opprett dokument"
+          "label": "Tekst på \"Vis liste\"-knappen",
+          "default": "Vis liste"
         },
         {
           "label": "Tekst på \"Eksporter\"-knappen",
@@ -105,12 +85,8 @@
           "default": "Velg alt"
         },
         {
-          "label": "Overskrift i \"Påstand\"-kolonnen,",
-          "default": "Påstand"
-        },
-        {
-          "label": "Overskrift i \"Kommentar\"-kolonnen,",
-          "default": "Kommentar"
+          "label": "Overskrift i \"Nøkkelord\"-kolonnen,",
+          "default": "Nøkkelord"
         },
         {
           "label": "Overskrift over \"Ressurser\"-tabellen",
@@ -131,31 +107,6 @@
         {
           "label": "Tekst når ingen ressurser er registrert",
           "default": "Ingen ressurser"
-        },
-        {
-          "label": "Overskrift for \"Oppsummering kommentar\"",
-          "default": "Oppsummering kommentar"
-        },
-        {
-          "label": "Tekst som vises når ingen oppsummering er gitt",
-          "default": "Ingen oppsummering"
-        }
-      ]
-    },
-    {
-      "label": "Tilgjengelighet",
-      "fields": [
-        {
-          "label": "Lukk",
-          "default": "Lukk"
-        },
-        {
-          "label": "Legg til kommentar",
-          "default": "Legg til kommentar"
-        },
-        {
-          "label": "Dra",
-          "default": "Dra"
         }
       ]
     }

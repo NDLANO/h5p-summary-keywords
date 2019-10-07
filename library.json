@@ -1,23 +1,22 @@
 {
-  "title": "Priority",
-  "description": "Reflect upon statements and put them in an order based on your thoughts and values",
+  "title": "Keywords",
+  "description": "Create your own keywords and use them in an essay",
   "majorVersion": 0,
-  "minorVersion": 9,
-  "patchVersion": 12,
-  "hasIcon": 1,
+  "minorVersion": 1,
+  "patchVersion": 0,
   "runnable": 1,
   "author": "NDLA",
   "license": "MIT",
-  "machineName": "H5P.OrderPriority",
+  "machineName": "H5P.Keywords",
   "embedTypes": [
-    "iframe"
+    "div"
   ],
   "preloadedJs": [
     {
       "path": "dist/vendor.js"
     },
     {
-      "path": "dist/h5p-order-priority.js"
+      "path": "dist/h5p-keywords.js"
     }
   ],
   "preloadedDependencies": [
@@ -50,18 +49,6 @@
       "machineName": "H5P.ExportPage",
       "majorVersion": 1,
       "minorVersion": 1
-    }
-  ],
-  "editorDependencies": [
-    {
-      "machineName": "H5PEditor.VerticalTabs",
-      "majorVersion": 1,
-      "minorVersion": 3
-    },
-    {
-      "machineName": "H5PEditor.ShowWhen",
-      "majorVersion": 1,
-      "minorVersion": 0
     }
   ]
 }

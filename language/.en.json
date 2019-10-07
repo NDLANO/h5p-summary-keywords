@@ -86,6 +86,19 @@
         {
           "label": "Ask the user if he/she wants to continue",
           "default": "Are you sure?"
+        },
+        {
+          "label": "Text that displays the remaining number of keywords",
+          "description": "Availble varables are :num",
+          "default": ":num remaining keywords"
+        },
+        {
+          "label": "Header for essay",
+          "default": "Essay"
+        },
+        {
+          "label": "Placeholder for keyword",
+          "default": "Type a keyword..."
         }
       ]
     },

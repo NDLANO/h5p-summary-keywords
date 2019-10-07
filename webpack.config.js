@@ -5,7 +5,7 @@ const nodeEnv = process.env.NODE_ENV || 'development';
 const isDev = (nodeEnv !== 'production');
 const config = {
     entry: {
-        'h5p-order-priority': [path.join(__dirname, 'src', 'app.js')]
+        'h5p-keywords': [path.join(__dirname, 'src', 'app.js')]
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -64,7 +64,7 @@ if (isDev) {
     config.devtool = 'inline-source-map';
     // this fails when used in iframes. Uncomment next line and change embedType to 'div'
     // when developing to get accessibility feedback in the browser
-    //config.entry["h5p-order-priority"].push(path.join(__dirname, 'src', 'axe.js'));
+    //config.entry["h5p-keywords"].push(path.join(__dirname, 'src', 'axe.js'));
 }
 
 module.exports = config;
