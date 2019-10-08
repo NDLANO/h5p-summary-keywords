@@ -60,7 +60,7 @@ function KeywordsList(props) {
                     {addKeywordLabel}
                 </span>
             </button>
-            <span>{translate('keywordsLeft', {num: numberOfKeywords - keywordList.length})}</span>
+            <span>{translate('keywordsLeft', {':num': numberOfKeywords - keywordList.length})}</span>
         </section>
     );
 }
