@@ -1,9 +1,6 @@
-# H5P Priority
-This content type encourages the user to reflect upon provided statements and put
-these in a ordered priority. They can also provide a comment for each statement 
-where they elaborate on why they made this priority.
-
-If configured users can also add their own statements.
+# H5P Summary Keywords
+This content type lets the user add keywords while reading/viewing/listening to relevant resources and make an essay 
+afterwards using the keywords created. The content type triggers reflection and thinking from the user.
 
 ## Getting started
 Clone this repository with git and check out the branch that you are interested

@@ -7,7 +7,7 @@
   "runnable": 1,
   "author": "NDLA",
   "license": "MIT",
-  "machineName": "H5P.Keywords",
+  "machineName": "H5P.SummaryKeywords",
   "embedTypes": [
     "div"
   ],
