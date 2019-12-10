@@ -1,12 +1,24 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
-export const KeywordsContext = React.createContext({
-    params: {},
-    behaviour: {},
-    id: null,
-    language: 'en',
-    translations: {},
-    registerReset: () => {},
-    reset: () => {},
-    collectExportValues: () => {},
-});
+const KeywordsContext = React.createContext();
+
+function KeywordsContextProvider({children, value}) {
+    return (
+        <KeywordsContext.Provider value={value}>
+            {children}
+        </KeywordsContext.Provider>
+    );
+}
+
+function useKeywordsContext() {
+    const context = useContext(KeywordsContext);
+    if( context === undefined){
+        throw new Error('useCategoryTask must be used within a CategoryTaskProvider');
+    }
+    return context;
+}
+
+export {
+    KeywordsContextProvider,
+    useKeywordsContext,
+}

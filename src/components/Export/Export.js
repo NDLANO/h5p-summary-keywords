@@ -1,13 +1,19 @@
-import React, {useContext, Fragment, useState, useRef, useEffect} from 'react';
-import { KeywordsContext } from "context/KeywordsContext";
+import React, {Fragment, useState, useRef, useEffect} from 'react';
+import {useKeywordsContext} from "context/KeywordsContext";
 
 function Export() {
 
-    const context = useContext(KeywordsContext);
+    const context = useKeywordsContext();
 
     const exportContainer = useRef();
     const [exportDocument, setExportDocument] = useState();
     const [exportObject, setExportObject] = useState();
+
+    const {
+        translations,
+        translate,
+        collectExportValues,
+    } = context;
 
     useEffect(() => {
         if( exportObject ){
@@ -22,20 +28,16 @@ function Export() {
     }, [exportDocument]);
 
     function attachExport() {
-        const {
-            translations,
-        } = context;
-
         context.triggerXAPIScored(0, 0, 'completed');
 
         const exportDocument = new H5P.ExportPage(
             exportObject.mainTitle,
             getExportPreview(),
-            false,
-            "",
-            "",
-            translations.selectAll,
-            translations.export,
+            true,
+            translate('submitText'),
+            translate('submitConfirmedText'),
+            translate('selectAll'),
+            translate('export'),
             H5P.instances[0].getLibraryFilePath('exportTemplate.docx'),
             exportObject
         );
@@ -49,8 +51,6 @@ function Export() {
                 header,
                 description = '',
             },
-            translations,
-            collectExportValues,
         } = context;
 
         const {
@@ -64,9 +64,9 @@ function Export() {
             description,
             hasResources: resources.length > 0,
             resources: resources,
-            keywordHeader: translations.headerKeywords,
+            keywordHeader: translate('headerKeywords'),
             keywordsList: keywords.join(", "),
-            essayHeader: translations.essayHeader,
+            essayHeader: translate('essayHeader'),
             essay: essay,
         });
     }
@@ -98,11 +98,11 @@ function Export() {
     return (
         <Fragment>
             <button
-                className={"h5p-keywords-button-export pull-right"}
+                className={"h5p-keywords-button-export"}
                 onClick={() => setExportObject(getExportObject())}
             >
-                <span className={"fa fa-file-text-o"} aria-hidden={"true"}/>
-                {context.translations.createDocument}
+                <span className={"h5p-ri hri-document"} aria-hidden={"true"}/>
+                {translate('createDocument')}
             </button>
             <div className={"export-container"} ref={exportContainer}/>
         </Fragment>

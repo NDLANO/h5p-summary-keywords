@@ -1,22 +1,26 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import Keywords from "../Keywords/Keywords";
-import classnames from 'classnames';
+import {useKeywordsContext} from "context/KeywordsContext";
 
-function KeywordsList(props) {
+function KeywordsList() {
 
+    const context = useKeywordsContext();
     const {
-        addKeywordLabel,
-        keywordHeader,
-        numberOfKeywords,
+        behaviour: {
+            numberOfKeywords = 10,
+        },
         translate,
-    } = props;
+        collectExportValues,
+        registerReset,
+    } = context;
 
     const [keywordList, setKeywords] = useState([]);
 
-    props.registerReset(() => setKeywords([]));
+    registerReset(() => setKeywords([]));
+    collectExportValues('keywords', () => keywordList);
 
-    props.export('keywords', () => keywordList);
+    useEffect(() => context.trigger('resize'), [keywordList]);
 
     function addKeyword() {
         setKeywords([...keywordList, ""]);
@@ -33,11 +37,12 @@ function KeywordsList(props) {
     }
 
     return (
-        <section>
-            <h2>{keywordHeader}</h2>
-            <div className={classnames("h5p-keywords-keywordslist-container", {
-                'empty': keywordList.length === 0
-            })}>
+        <section className={"h5p-keywords-keywordslist"}>
+            <h2>{translate('headerKeywords')}</h2>
+            <div className={"h5p-keywords-keywordslist-container"}>
+                {keywordList.length === 0 && (
+                    <div className={"h5p-keywords-no-keywords"}>{translate('noKeywordsAdded')}</div>
+                )}
                 {keywordList.map((keyword, index) => (
                     <Keywords
                         key={"k" + index}
@@ -45,34 +50,28 @@ function KeywordsList(props) {
                         onDelete={() => handleDelete(index)}
                         onChange={keywordText => handleChange(keywordText, index)}
                         keywordPlaceholder={translate('keywordPlaceholder')}
+                        ariaDelete={translate('delete')}
                     />))}
             </div>
             <button
+                className={"h5p-keywords-add-keyword"}
                 aria-labelledby={"addKeywordLabel"}
                 onClick={addKeyword}
                 aria-disabled={keywordList.length >= numberOfKeywords}
                 disabled={keywordList.length >= numberOfKeywords}
             >
-                <span className={"fa fa-plus"} aria-hidden={true}/>
-                <span
-                    id={"addKeywordLabel"}
-                >
-                    {addKeywordLabel}
-                </span>
+                <div>
+                    <span className={"fa fa-plus"} aria-hidden={true}/>
+                    <span
+                        id={"addKeywordLabel"}
+                    >
+                        {translate('addKeyword', null)}
+                    </span>
+                </div>
             </button>
-            <span>{translate('keywordsLeft', {':num': numberOfKeywords - keywordList.length})}</span>
+            <div className={"h5p-keywords-keywords-left"}>{translate('keywordsLeft', {':num': numberOfKeywords - keywordList.length})}</div>
         </section>
     );
 }
-
-KeywordsList.propTypes = {
-    numberOfKeywords: PropTypes.number,
-    keywordHeader: PropTypes.string,
-    addKeywordLabel: PropTypes.string,
-    translate: PropTypes.func,
-    keywordList: PropTypes.array,
-    registerReset: PropTypes.func,
-    export: PropTypes.func,
-};
 
 export default KeywordsList;

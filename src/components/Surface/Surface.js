@@ -1,39 +1,62 @@
-import React, { useContext } from 'react';
-import Header from "../Header/Header";
-import { KeywordsContext } from 'context/KeywordsContext';
+import React, { useRef, useEffect } from 'react';
+import {useKeywordsContext} from 'context/KeywordsContext';
 import KeywordsList from "../KeywordsList/KeywordsList";
 import Essay from "../Essay/Essay";
 import Footer from "../Footer/Footer";
 
 function Surface() {
 
-    const context = useContext(KeywordsContext);
+    const resourceContainer = useRef();
+    const context = useKeywordsContext();
     const {
+        id,
+        language = 'en',
         params: {
-            numberOfKeywords = 10
+            resources: resourcesList,
+            header,
+            description = ''
         },
         translate,
         collectExportValues,
     } = context;
 
+    useEffect(() => {
+        const filterResourceList = element => Object.keys(element).length !== 0 && element.constructor === Object;
+        if (resourcesList.params.resourceList && resourcesList.params.resourceList.filter(filterResourceList).length > 0) {
+            const resourceList = new H5P.ResourceList(resourcesList.params, id, language);
+            resourceList.attach(resourceContainer.current);
+
+            collectExportValues('resources', () => resourcesList.params.resourceList
+                .filter(filterResourceList)
+                .map(resource => Object.assign({}, {
+                    title: "",
+                    url: "",
+                    introduction: "",
+                }, resource)) || []);
+        }
+    }, [resourcesList]);
+
     return (
-        <main>
-            <Header/>
-            <KeywordsList
-                numberOfKeywords={numberOfKeywords}
-                keywordHeader={translate('headerKeywords')}
-                addKeywordLabel={translate('addKeyword', null)}
-                translate={translate}
-                registerReset={context.registerReset}
-                export={collectExportValues}
-            />
-            <Essay
-                header={translate('essayHeader')}
-                registerReset={context.registerReset}
-                export={collectExportValues}
-            />
+        <article>
+            <h1
+                className={"h5p-keywords-header"}
+            >{header}</h1>
+            <div
+                className={"h5p-keywords-surface-main"}
+            >
+                <div
+                    className={"h5p-keywords-surface-info"}
+                    ref={resourceContainer}
+                >
+                    {description && (
+                        <p className={'h5p-keywords-description'}>{description}</p>
+                    )}
+                </div>
+                <KeywordsList />
+                <Essay />
+            </div>
             <Footer/>
-        </main>
+        </article>
     );
 }
 

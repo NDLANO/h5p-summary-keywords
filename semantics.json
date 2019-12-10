@@ -14,6 +14,22 @@
     "optional": true
   },
   {
+    "name": "essayHeader",
+    "type": "text",
+    "label": "Essay",
+    "default": "Essay",
+    "importance": "medium"
+  },
+  {
+    "name": "essayInstruction",
+    "type": "text",
+    "widget": "textarea",
+    "lines": 3,
+    "label": "Essay instruction",
+    "importance": "low",
+    "optional": true
+  },
+  {
     "name": "resources",
     "type": "group",
     "label": "Resources",
@@ -49,6 +65,7 @@
         "name": "numberOfKeywords",
         "type": "number",
         "label": "Number of keywords",
+        "description": "Set the number of keywords the user has to provide",
         "default": 10
       }
     ]
@@ -73,34 +90,28 @@
         "default": "Restart"
       },
       {
+        "name": "continue",
+        "type": "text",
+        "label": "Label for the \"Continue\"-button",
+        "default": "Continue"
+      },
+      {
+        "name": "cancel",
+        "type": "text",
+        "label": "Label for the \"Cancel\"-button",
+        "default": "Cancel"
+      },
+      {
         "name": "addKeyword",
         "type": "text",
-        "label": "Label for the \"Add alternative\"-button",
+        "label": "Label for the \"Add keyword\"-button",
         "default": "Add a keyword"
-      },
-      {
-        "name": "yes",
-        "type": "text",
-        "label": "Label for the \"Yes\"-button",
-        "default": "Yes"
-      },
-      {
-        "name": "no",
-        "type": "text",
-        "label": "Label for the \"No\"-button",
-        "default": "No"
       },
       {
         "name": "ifYouContinueAllYourChangesWillBeLost",
         "type": "text",
         "label": "Inform the user that data will be lost if he/she continues",
         "default": "If you continue all your changes will be lost"
-      },
-      {
-        "name": "areYouSure",
-        "type": "text",
-        "label": "Ask the user if he/she wants to continue",
-        "default": "Are you sure?"
       },
       {
         "name": "keywordsLeft",
@@ -110,16 +121,22 @@
         "default": ":num keywords left"
       },
       {
-        "name": "essayHeader",
-        "type": "text",
-        "label": "Header for essay",
-        "default": "Essay"
-      },
-      {
         "name": "keywordPlaceholder",
         "type": "text",
         "label": "Placeholder for keyword",
         "default": "Type a keyword..."
+      },
+      {
+        "name": "essayPlaceholder",
+        "type": "text",
+        "label": "Placeholder in the essay textbox",
+        "default": "Type your answer here"
+      },
+      {
+        "name": "noKeywordsAdded",
+        "type": "text",
+        "label": "Text displayed when no keywords are added",
+        "default": "No keywords added"
       }
     ]
   },
@@ -183,6 +200,27 @@
         "type": "text",
         "label": "Label when no resources are found",
         "default": "No resources"
+      }
+    ]
+  },
+  {
+    "label": "Accessibility",
+    "importance": "low",
+    "name": "accessibility",
+    "type": "group",
+    "common": true,
+    "fields": [
+      {
+        "name": "close",
+        "type": "text",
+        "label": "Used instead of 'Close'-icon",
+        "default": "Close"
+      },
+      {
+        "name": "delete",
+        "type": "text",
+        "label": "Used instead of 'Delete'-icon",
+        "default": "Delete"
       }
     ]
   }

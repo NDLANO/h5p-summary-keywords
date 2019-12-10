@@ -15,7 +15,10 @@ const config = {
         modules: [
             path.resolve('./src'),
             path.resolve('./node_modules')
-        ]
+        ],
+        alias: {
+            '@assets': path.resolve(__dirname, 'assets/')
+        }
     },
     module: {
         rules: [
@@ -36,6 +39,7 @@ const config = {
                 test: /\.(png|woff|woff2|eot|ttf|svg|gif)$/,
                 include: [
                     path.resolve(__dirname, 'src'),
+                    path.resolve(__dirname, 'assets'),
                 ],
                 loader: 'url-loader?limit=100000'
             }
@@ -64,7 +68,7 @@ if (isDev) {
     config.devtool = 'inline-source-map';
     // this fails when used in iframes. Uncomment next line and change embedType to 'div'
     // when developing to get accessibility feedback in the browser
-    //config.entry["h5p-keywords"].push(path.join(__dirname, 'src', 'axe.js'));
+    config.entry["h5p-keywords"].push(path.join(__dirname, 'src', 'axe.js'));
 }
 
 module.exports = config;

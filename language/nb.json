@@ -7,6 +7,13 @@
       "label": "Beskrivelse"
     },
     {
+      "label": "Essay",
+      "default": "Essay"
+    },
+    {
+      "label": "Essay instruction"
+    },
+    {
       "label": "Ressurser",
       "description": "Valgfrie lenker til ressurser."
     },
@@ -20,7 +27,7 @@
         },
         {
           "label": "Antall nøkkelord",
-          "description": "Hvor mange landingsfelter skal brukeren ta stilling til?"
+          "description": "Hvor mange nøkkelord skal brukeren opprette?"
         }
       ]
     },
@@ -36,24 +43,20 @@
           "default": "Start på nytt"
         },
         {
+          "label": "Tekst på  \"Fortsett\"-knappen",
+          "default": "Fortsett"
+        },
+        {
+          "label": "Tekst på  \"Avbryt\"-knappen",
+          "default": "Avbryt"
+        },
+        {
           "label": "Tekst på \"Lag nytt nøkkelord\"-knappen",
           "default": "Lag nytt nøkkelord"
         },
         {
-          "label": "Tekst på \"Ja\"-knappen",
-          "default": "Yes"
-        },
-        {
-          "label": "Tekst på \"Nei\"-knappen",
-          "default": "Nei"
-        },
-        {
           "label": "Informer brukeren om at all data vil gå tapt om vedkommende fortsetter",
           "default": "Hvis du fortsetter vil alle data gå tapt."
-        },
-        {
-          "label": "Spør brukeren om vedkommende vil fortsette",
-          "default": "Er du sikker?"
         },
         {
           "label": "Tekst som viser antall gjennstående nøkkelord",
@@ -61,12 +64,16 @@
           "default": ":num gjenstående nøkkelord"
         },
         {
-          "label": "Overskrift for essay",
-          "default": "Essay"
-        },
-        {
           "label": "Plassholder for nøkkelord",
           "default": "Skriv et nøkkelord..."
+        },
+        {
+          "label": "Plassholder for essay tekstboksen",
+          "default": "Skriv ditt svar her"
+        },
+        {
+          "label": "Tekst som vises når ingen nøkkelord er opprettet",
+          "default": "Ingen nøkkelord"
         }
       ]
     },
@@ -74,8 +81,8 @@
       "label": "Ressursrapport",
       "fields": [
         {
-          "label": "Tekst på \"Vis liste\"-knappen",
-          "default": "Vis liste"
+          "label": "Tekst på \"Opprett dokument\"-knappen",
+          "default": "Opprett dokument"
         },
         {
           "label": "Tekst på \"Eksporter\"-knappen",
@@ -108,6 +115,19 @@
         {
           "label": "Tekst når ingen ressurser er registrert",
           "default": "Ingen ressurser"
+        }
+      ]
+    },
+    {
+      "label": "Accessibility",
+      "fields": [
+        {
+          "label": "Brukt istedenfor 'Lukk'-ikonet",
+          "default": "Lukk"
+        },
+        {
+          "label": "Brukt i stedenfor 'Slett'-ikonet",
+          "default": "Slett"
         }
       ]
     }

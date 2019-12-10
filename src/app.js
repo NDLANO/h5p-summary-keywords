@@ -2,28 +2,15 @@ import "core-js";
 import "regenerator-runtime/runtime";
 import React from 'react';
 import ReactDOM from "react-dom";
-import { KeywordsContext } from 'context/KeywordsContext';
+import { KeywordsContextProvider } from 'context/KeywordsContext';
 import Surface from "components/Surface/Surface";
 import 'components/Keywords.scss';
+import 'fonts/H5PReflectionFont.scss';
+import {getBreakpoints, sanitizeParams} from "components/utils";
 
 // Load library
 H5P = H5P || {};
-H5P.Keywords = (function () {
-
-    const breakPoints = [
-        {
-            "className": "h5p-medium-tablet-size",
-            "shouldAdd": width => width >= 500 && width < 768
-        },
-        {
-            "className": "h5p-large-tablet-size",
-            "shouldAdd": width => width >= 768 && width < 1024
-        },
-        {
-            "className": "h5p-large-size",
-            "shouldAdd": width => width >= 1024
-        },
-    ];
+H5P.SummaryKeywords = (function () {
 
     function Wrapper(params, contentId, extras = {}) {
         // Initialize event inheritance
@@ -33,35 +20,37 @@ H5P.Keywords = (function () {
             language = 'en'
         } = extras;
 
-        this.container;
-        this.params = params;
-        this.behaviour = params.behaviour || {};
+        let container;
+        this.params = sanitizeParams(params);
+        this.behaviour = this.params.behaviour || {};
         this.resetStack = [];
         this.collectExportValuesStack = [];
         this.wrapper = null;
         this.id = contentId;
         this.language = language;
         this.activityStartTime = new Date();
+        this.activeBreakpoints = [];
 
         this.translations = Object.assign({}, {
             resources: "Resources",
             save: "Save",
             restart: "Restart",
             createDocument: "Create document",
-            labelSummaryComment: "Summary comment",
-            labelStatement: "Statement",
             labelResources: "Resources",
             selectAll: "Select all",
             export: "Export",
             add: "Add new keyword",
-            yes: "Yes",
-            no: "No",
+            delete: "Delete",
             ifYouContinueAllYourChangesWillBeLost: "If you continue all your changes will be lost.",
-            areYouSure: "Are you sure?",
+            close: "Close",
             keywordsLeft: ":num keywords left",
             essayHeader: "Essay",
             keywordPlaceholder: "Type a keyword...",
-        }, params.l10n, params.resourceReport, params.accessibility);
+            continue: "Continue",
+            cancel: "Cancel",
+            essayInstruction: 'Write down an essay using the keywords you picked',
+            essayPlaceholder: 'Type your answer here',
+        }, this.params.l10n, this.params.resourceReport, this.params.accessibility);
 
         const createElements = () => {
             const wrapper = document.createElement('div');
@@ -70,9 +59,9 @@ H5P.Keywords = (function () {
             this.wrapper = wrapper;
 
             ReactDOM.render(
-                <KeywordsContext.Provider value={this}>
+                <KeywordsContextProvider value={this}>
                     <Surface/>
-                </KeywordsContext.Provider>,
+                </KeywordsContextProvider>,
                 this.wrapper
             );
         };
@@ -97,29 +86,34 @@ H5P.Keywords = (function () {
             // Append elements to DOM
             $container[0].appendChild(this.wrapper);
             $container[0].classList.add('h5p-keywords');
-            this.container = $container;
+            container = $container;
         };
 
         this.getRect = () => {
             return this.wrapper.getBoundingClientRect();
         };
 
-        this.reset = () => {
-            this.resetStack.forEach(callback => callback());
+        this.reset = () => this.resetStack.forEach(callback => callback());
+
+        this.addBreakPoints = wrapper => {
+            const activeBreakpoints = [];
+            const rect = this.getRect();
+            getBreakpoints().forEach(item => {
+                if (item.shouldAdd(rect.width)) {
+                    wrapper.classList.add(item.className);
+                    activeBreakpoints.push(item.className);
+                } else {
+                    wrapper.classList.remove(item.className);
+                }
+            });
+            this.activeBreakpoints = activeBreakpoints;
         };
 
         this.resize = () => {
             if (!this.wrapper) {
                 return;
             }
-            const rect = this.getRect();
-            breakPoints.forEach(item => {
-                if (item.shouldAdd(rect.width)) {
-                    this.wrapper.classList.add(item.className);
-                } else {
-                    this.wrapper.classList.remove(item.className);
-                }
-            });
+            this.addBreakPoints(this.wrapper);
         };
 
         /**

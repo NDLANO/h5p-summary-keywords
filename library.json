@@ -9,7 +9,7 @@
   "license": "MIT",
   "machineName": "H5P.SummaryKeywords",
   "embedTypes": [
-    "div"
+    "iframe"
   ],
   "preloadedJs": [
     {

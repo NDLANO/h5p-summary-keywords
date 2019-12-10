@@ -4,7 +4,7 @@ import Reset from './Reset';
 
 function Footer() {
     return (
-        <section>
+        <section className={"h5p-keywords-footer"}>
             <Reset/>
             <Export/>
         </section>

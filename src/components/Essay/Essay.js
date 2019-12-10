@@ -1,28 +1,38 @@
 import React, {useRef} from 'react';
-import PropTypes from 'prop-types';
+import {useKeywordsContext} from "context/KeywordsContext";
 
-function Essay(props) {
+function Essay() {
 
     const essayRef = useRef();
+    const context = useKeywordsContext();
 
-    props.registerReset(() => essayRef.current.value = '');
-    props.export('essay', () => essayRef.current.value);
+    const {
+        translate,
+        registerReset,
+        collectExportValues,
+        params: {
+            essayHeader,
+            essayInstruction,
+        }
+    } = context;
+
+    registerReset(() => essayRef.current.value = '');
+    collectExportValues('essay', () => essayRef.current.value);
 
     return (
-        <section>
-            <h2 id={"essayHeader"}>{props.header}</h2>
+        <section className={"h5p-keywords-essay"}>
+            <h2 id={"essayHeader"}>{essayHeader}</h2>
+            {essayInstruction && (
+                <p id={"essayInstruction"}>{essayInstruction}</p>
+            )}
             <textarea
                 aria-labelledby={"essayHeader"}
+                aria-describedby={essayInstruction ? "essayInstrucion" : ""}
                 ref={essayRef}
+                placeholder={translate('essayPlaceholder')}
             />
         </section>
     );
 }
-
-Essay.propTypes = {
-    header: PropTypes.string,
-    registerReset: PropTypes.func,
-    export: PropTypes.func,
-};
 
 export default Essay;
