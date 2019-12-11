@@ -37,6 +37,9 @@
         {
           "label": "Antall nøkkelord",
           "description": "Hvor mange nøkkelord skal brukeren opprette?"
+        },
+        {
+          "label": "Tillat brukeren å overskride det maksimale antallet søkeord"
         }
       ]
     },

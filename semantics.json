@@ -89,6 +89,12 @@
         "label": "Number of keywords",
         "description": "Set the number of keywords the user has to provide",
         "default": 10
+      },
+      {
+        "name": "allowExceedOfKeywords",
+        "type": "boolean",
+        "label": "Allow the user to exceed the maximum number of keywords",
+        "default": false
       }
     ]
   },

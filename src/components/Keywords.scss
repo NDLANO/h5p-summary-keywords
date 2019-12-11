@@ -225,6 +225,13 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
     }
   }
 
+  &:disabled,
+  &[disabled]{
+    div {
+      background-color: #cccccc;
+    }
+  }
+
   & > div {
     border-radius: $borderRadius;
     background-color: rgba(219,226,232,0.25);
