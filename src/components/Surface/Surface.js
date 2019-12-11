@@ -3,6 +3,7 @@ import {useKeywordsContext} from 'context/KeywordsContext';
 import KeywordsList from "../KeywordsList/KeywordsList";
 import Essay from "../Essay/Essay";
 import Footer from "../Footer/Footer";
+import Media from "../Media/Media";
 
 function Surface() {
 
@@ -14,9 +15,9 @@ function Surface() {
         params: {
             resources: resourcesList,
             header,
-            description = ''
+            description = '',
+            media,
         },
-        translate,
         collectExportValues,
     } = context;
 
@@ -52,6 +53,12 @@ function Surface() {
                         <p className={'h5p-keywords-description'}>{description}</p>
                     )}
                 </div>
+                <Media
+                    mediaParams={media}
+                    id={id}
+                    language={language}
+                    onLoaded={() => context.trigger('resize')}
+                />
                 <KeywordsList />
                 <Essay />
             </div>

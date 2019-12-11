@@ -62,7 +62,7 @@ export function sanitizeParams(params) {
         resources,
         accessibility,
     } = params;
-    console.log(resourceReport, handleObject(resourceReport));
+
     if (resources.params.resourceList && resources.params.resourceList.filter(filterResourceList).length > 0) {
         resources.params = {
             ...resources.params,

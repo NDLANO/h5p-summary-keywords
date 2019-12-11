@@ -7,6 +7,15 @@
       "label": "Task description"
     },
     {
+      "label": "Embedded resource",
+      "fields": [
+        {
+          "label": "Highlighted resource",
+          "description": "Optional resource that will be displayed above the keywords."
+        }
+      ]
+    },
+    {
       "label": "Essay",
       "default": "Essay"
     },

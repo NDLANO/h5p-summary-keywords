@@ -7,6 +7,15 @@
       "label": "Beskrivelse"
     },
     {
+      "label": "Innebygd ressurs",
+      "fields": [
+        {
+          "label": "Fremhevet ressurs",
+          "description": "Valgfri ressurs som vises over nøkkelordene."
+        }
+      ]
+    },
+    {
       "label": "Essay",
       "default": "Essay"
     },
