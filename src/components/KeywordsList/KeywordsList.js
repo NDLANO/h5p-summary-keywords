@@ -24,7 +24,9 @@ function KeywordsList() {
     useEffect(() => context.trigger('resize'), [keywordList]);
 
     function addKeyword() {
-        setKeywords([...keywordList, ""]);
+        if( !isAddingDisabled()){
+            setKeywords([...keywordList, ""]);
+        }
     }
 
     function handleDelete(index) {
@@ -56,6 +58,7 @@ function KeywordsList() {
                         onChange={keywordText => handleChange(keywordText, index)}
                         keywordPlaceholder={translate('keywordPlaceholder')}
                         ariaDelete={translate('delete')}
+                        addKeyword={addKeyword}
                     />))}
             </div>
             <button

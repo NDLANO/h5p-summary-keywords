@@ -4,21 +4,40 @@ import markerIcon from "@assets/marker.svg";
 import {debounce} from "../utils";
 import classnames from 'classnames';
 
-function Keywords(props) {
+function Keywords({keyword, onChange, keywordPlaceholder, addKeyword, ariaDelete, onDelete}) {
 
-    const [inEditmode, toggleEditmode] = useState(true);
-
+    const [inEditMode, toggleEditMode] = useState(true);
+    const [isUpdate, setUpdate] = useState(false);
     const inputRef = useRef();
 
     useEffect(() => {
-        if( inEditmode ){
+        if (inEditMode) {
             inputRef.current.focus();
+            setUpdate(keyword.length > 0);
         }
-    }, [inEditmode]);
+    }, [inEditMode]);
 
-    function handleKeyPress(event){
+    function handleBlur(event) {
+        if (event.which !== undefined && inEditMode) {
+            if (inputRef.current.value.length > 0 && !isUpdate) {
+                addKeyword();
+            } else if (inputRef.current.value.length === 0) {
+                onDelete();
+            }
+        }
+        toggleEditMode(false);
+    }
+
+    function handleKeyPress(event) {
         if (event.which === 13) {
-            toggleEditmode(!inEditmode);
+            if (inEditMode) {
+                handleBlur(event);
+            } else {
+                toggleEditMode(true);
+            }
+        }
+        if (event.which === 32 && !inEditMode) {
+            toggleEditMode(true);
         }
     }
 
@@ -28,16 +47,16 @@ function Keywords(props) {
         >
             <div className={"h5p-keywords-keyword-container-inner"}>
                 <label
-                    className={classnames("h5p-keywords-keyword",{
-                        "hidden": !inEditmode
+                    className={classnames("h5p-keywords-keyword", {
+                        "hidden": !inEditMode
                     })}
                 >
                     <input
                         ref={inputRef}
                         onKeyPress={handleKeyPress}
-                        onBlur={() => toggleEditmode(false)}
-                        onChange={debounce(() => props.onChange(inputRef.current.value), 200)}
-                        placeholder={props.keywordPlaceholder}
+                        onBlur={handleBlur}
+                        onChange={debounce(() => onChange(inputRef.current.value), 100)}
+                        placeholder={keywordPlaceholder}
                         style={{
                             backgroundImage: 'url(' + markerIcon + ')',
                         }}
@@ -45,16 +64,16 @@ function Keywords(props) {
                 </label>
                 <div
                     className={classnames("h5p-keywords-keyword", {
-                        "hidden": inEditmode,
+                        "hidden": inEditMode,
                     })}
-                    onClick={() => toggleEditmode(true)}
+                    onClick={() => toggleEditMode(true)}
                     onKeyPress={handleKeyPress}
                     tabIndex={0}
                 >
-                    {props.keyword.length > 0 ? props.keyword : props.keywordPlaceholder}
+                    {keyword.length > 0 ? keyword : keywordPlaceholder}
                 </div>
                 <button
-                    onClick={props.onDelete}
+                    onClick={onDelete}
                     className={"h5p-keywords-keyword-button"}
                 >
                     <span
@@ -63,7 +82,7 @@ function Keywords(props) {
                     />
                     <span
                         className={"visible-hidden"}
-                    >{props.ariaDelete}</span>
+                    >{ariaDelete}</span>
                 </button>
             </div>
         </div>
@@ -76,6 +95,7 @@ Keywords.propTypes = {
     onDelete: PropTypes.func,
     keywordPlaceholder: PropTypes.string,
     ariaDelete: PropTypes.string,
+    addKeyword: PropTypes.func,
 };
 
 export default Keywords;
