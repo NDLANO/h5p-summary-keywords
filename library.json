@@ -5,6 +5,7 @@
   "minorVersion": 1,
   "patchVersion": 2,
   "runnable": 1,
+  "hasIcon": 1,
   "author": "NDLA",
   "license": "MIT",
   "machineName": "H5P.SummaryKeywords",
