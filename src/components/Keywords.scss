@@ -96,6 +96,13 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   .h5p-keywords-essay textarea {
     padding: 1rem;
   }
+
+  .h5p-keywords-media {
+    &.h5p-image {
+      max-width: 50%;
+      margin: 0 auto;
+    }
+  }
 }
 
 .h5p-keywords-header {
@@ -372,6 +379,17 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   }
 }
 
+.h5p-keywords-media {
+  overflow-y: auto;
+  border-radius: $borderRadius;
+  padding: 0.5rem;
+  box-shadow: 0 0 6px 1px rgba(3,3,3,0.1);
+
+  &.h5p-text {
+    word-break: break-word;
+    max-height: calc(50em * (9/16));
+  }
+}
 
 .joubel-create-document {
   top: 0;
