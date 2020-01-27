@@ -7,64 +7,64 @@ import Media from "../Media/Media";
 
 function Surface() {
 
-    const resourceContainer = useRef();
-    const context = useKeywordsContext();
-    const {
-        id,
-        language = 'en',
-        params: {
-            resources: resourcesList,
-            header,
-            description = '',
-            media,
-        },
-        collectExportValues,
-    } = context;
+  const resourceContainer = useRef();
+  const context = useKeywordsContext();
+  const {
+    id,
+    language = 'en',
+    params: {
+      resources: resourcesList,
+      header,
+      description = '',
+      media,
+    },
+    collectExportValues,
+  } = context;
 
-    useEffect(() => {
-        const filterResourceList = element => Object.keys(element).length !== 0 && element.constructor === Object;
-        if (resourcesList.params.resourceList && resourcesList.params.resourceList.filter(filterResourceList).length > 0) {
-            const resourceList = new H5P.ResourceList(resourcesList.params, id, language);
-            resourceList.attach(resourceContainer.current);
+  useEffect(() => {
+    const filterResourceList = element => Object.keys(element).length !== 0 && element.constructor === Object;
+    if (resourcesList.params.resourceList && resourcesList.params.resourceList.filter(filterResourceList).length > 0) {
+      const resourceList = new H5P.ResourceList(resourcesList.params, id, language);
+      resourceList.attach(resourceContainer.current);
 
-            collectExportValues('resources', () => resourcesList.params.resourceList
-                .filter(filterResourceList)
-                .map(resource => Object.assign({}, {
-                    title: "",
-                    url: "",
-                    introduction: "",
-                }, resource)) || []);
-        }
-    }, [resourcesList]);
+      collectExportValues('resources', () => resourcesList.params.resourceList
+        .filter(filterResourceList)
+        .map(resource => Object.assign({}, {
+          title: "",
+          url: "",
+          introduction: "",
+        }, resource)) || []);
+    }
+  }, [resourcesList]);
 
-    return (
-        <article>
-            <h1
-                className={"h5p-keywords-header"}
-            >{header}</h1>
-            <div
-                className={"h5p-keywords-surface-main"}
-            >
-                <div
-                    className={"h5p-keywords-surface-info"}
-                    ref={resourceContainer}
-                >
-                    {description && (
-                        <p className={'h5p-keywords-description'}>{description}</p>
-                    )}
-                </div>
-                <Media
-                    mediaParams={media}
-                    id={id}
-                    language={language}
-                    onLoaded={() => context.trigger('resize')}
-                />
-                <KeywordsList />
-                <Essay />
-            </div>
-            <Footer/>
-        </article>
-    );
+  return (
+    <article>
+      <h1
+        className={"h5p-keywords-header"}
+      >{header}</h1>
+      <div
+        className={"h5p-keywords-surface-main"}
+      >
+        <div
+          className={"h5p-keywords-surface-info"}
+          ref={resourceContainer}
+        >
+          {description && (
+            <p className={'h5p-keywords-description'}>{description}</p>
+          )}
+        </div>
+        <Media
+          mediaParams={media}
+          id={id}
+          language={language}
+          onLoaded={() => context.trigger('resize')}
+        />
+        <KeywordsList />
+        <Essay />
+      </div>
+      <Footer/>
+    </article>
+  );
 }
 
 export default Surface;

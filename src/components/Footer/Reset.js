@@ -4,81 +4,81 @@ import Popover from "../Popover/Popover";
 
 function Reset() {
 
-    const [showPopover, setPopover] = useState(false);
-    const context = useKeywordsContext();
+  const [showPopover, setPopover] = useState(false);
+  const context = useKeywordsContext();
 
-    function togglePopover() {
-        setPopover(!showPopover);
-    }
+  function togglePopover() {
+    setPopover(!showPopover);
+  }
 
-    function confirmReset() {
-        reset();
-        togglePopover();
-    }
+  function confirmReset() {
+    reset();
+    togglePopover();
+  }
 
-    const {
-        behaviour: {
-            enableRetry = false
-        },
-        reset,
-        translate
-    } = context;
+  const {
+    behaviour: {
+      enableRetry = false
+    },
+    reset,
+    translate
+  } = context;
 
-    return (
-        <Fragment>
-            {enableRetry === true && (
-                <Popover
-                    handleClose={togglePopover}
-                    show={showPopover}
-                    classnames={Array.from(context.activeBreakpoints)}
-                    close={translate('close')}
-                    header={translate('restart')}
-                    align={"start"}
-                    popoverContent={(
-                        <div
-                            role={"dialog"}
-                            aria-labelledby={"resetTitle"}
-                            className={"h5p-keywords-reset-modal"}
-                        >
-                            <div
-                                id={"resetTitle"}
-                            >
-                                {translate('ifYouContinueAllYourChangesWillBeLost')}
-                            </div>
-                            <div>
-                                <button
-                                    onClick={confirmReset}
-                                    className={"continue"}
-                                    type={"button"}
-                                >
-                                    {translate('continue')}
-                                </button>
-                                <button
-                                    onClick={togglePopover}
-                                    className={"cancel"}
-                                    type={"button"}
-                                >
-                                    {translate('cancel')}
-                                </button>
-                            </div>
-                        </div>
-                    )}
+  return (
+    <Fragment>
+      {enableRetry === true && (
+        <Popover
+          handleClose={togglePopover}
+          show={showPopover}
+          classnames={Array.from(context.activeBreakpoints)}
+          close={translate('close')}
+          header={translate('restart')}
+          align={"start"}
+          popoverContent={(
+            <div
+              role={"dialog"}
+              aria-labelledby={"resetTitle"}
+              className={"h5p-keywords-reset-modal"}
+            >
+              <div
+                id={"resetTitle"}
+              >
+                {translate('ifYouContinueAllYourChangesWillBeLost')}
+              </div>
+              <div>
+                <button
+                  onClick={confirmReset}
+                  className={"continue"}
+                  type={"button"}
                 >
-                    <button
-                        className={"h5p-keywords-button-restart"}
-                        onClick={togglePopover}
-                        type={"button"}
-                    >
-                        <span
-                            className={"h5p-ri hri-restart"}
-                            aria-hidden={"true"}
-                        />
-                        {translate('restart')}
-                    </button>
-                </Popover>
-            )}
-        </Fragment>
-    );
+                  {translate('continue')}
+                </button>
+                <button
+                  onClick={togglePopover}
+                  className={"cancel"}
+                  type={"button"}
+                >
+                  {translate('cancel')}
+                </button>
+              </div>
+            </div>
+          )}
+        >
+          <button
+            className={"h5p-keywords-button-restart"}
+            onClick={togglePopover}
+            type={"button"}
+          >
+            <span
+              className={"h5p-ri hri-restart"}
+              aria-hidden={"true"}
+            />
+            {translate('restart')}
+          </button>
+        </Popover>
+      )}
+    </Fragment>
+  );
 }
 
 
