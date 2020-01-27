@@ -1,5 +1,6 @@
 import React, {Fragment, useState, useRef, useEffect} from 'react';
 import {useKeywordsContext} from "context/KeywordsContext";
+import { escapeHTML } from 'components/utils';
 
 function Export() {
 
@@ -30,14 +31,15 @@ function Export() {
     function attachExport() {
         context.triggerXAPIScored(0, 0, 'completed');
 
+        const useExport = H5PIntegration.reportingIsEnabled || false;
         const exportDocument = new H5P.ExportPage(
-            exportObject.mainTitle,
+            escapeHTML(exportObject.mainTitle),
             getExportPreview(),
-            true,
-            translate('submitText'),
-            translate('submitConfirmedText'),
-            translate('selectAll'),
-            translate('export'),
+            useExport,
+            escapeHTML(translate('submitText')),
+            escapeHTML(translate('submitConfirmedText')),
+            escapeHTML(translate('selectAll')),
+            escapeHTML(translate('export')),
             H5P.instances[0].getLibraryFilePath('exportTemplate.docx'),
             exportObject
         );
@@ -99,6 +101,7 @@ function Export() {
         <Fragment>
             <button
                 className={"h5p-keywords-button-export"}
+                type={"button"}
                 onClick={() => setExportObject(getExportObject())}
             >
                 <span className={"h5p-ri hri-document"} aria-hidden={"true"}/>

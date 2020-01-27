@@ -74,6 +74,7 @@ function Keywords({keyword, onChange, keywordPlaceholder, addKeyword, ariaDelete
                 </div>
                 <button
                     onClick={onDelete}
+                    type={"button"}
                     className={"h5p-keywords-keyword-button"}
                 >
                     <span

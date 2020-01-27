@@ -24,7 +24,7 @@ function KeywordsList() {
     useEffect(() => context.trigger('resize'), [keywordList]);
 
     function addKeyword() {
-        if( !isAddingDisabled()){
+        if (!isAddingDisabled()) {
             setKeywords([...keywordList, ""]);
         }
     }
@@ -64,6 +64,7 @@ function KeywordsList() {
             <button
                 className={"h5p-keywords-add-keyword"}
                 aria-labelledby={"addKeywordLabel"}
+                type={"button"}
                 onClick={addKeyword}
                 aria-disabled={isAddingDisabled()}
                 disabled={isAddingDisabled()}

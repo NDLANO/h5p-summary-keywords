@@ -13,7 +13,7 @@ function KeywordsContextProvider({children, value}) {
 function useKeywordsContext() {
     const context = useContext(KeywordsContext);
     if( context === undefined){
-        throw new Error('useCategoryTask must be used within a CategoryTaskProvider');
+        throw new Error('useKeywords must be used within a KeywordContextProvider');
     }
     return context;
 }

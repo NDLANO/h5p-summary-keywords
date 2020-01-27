@@ -7,7 +7,7 @@ function Reset() {
     const [showPopover, setPopover] = useState(false);
     const context = useKeywordsContext();
 
-    function togglePopover(){
+    function togglePopover() {
         setPopover(!showPopover);
     }
 
@@ -49,12 +49,14 @@ function Reset() {
                                 <button
                                     onClick={confirmReset}
                                     className={"continue"}
+                                    type={"button"}
                                 >
                                     {translate('continue')}
                                 </button>
                                 <button
                                     onClick={togglePopover}
                                     className={"cancel"}
+                                    type={"button"}
                                 >
                                     {translate('cancel')}
                                 </button>
@@ -65,6 +67,7 @@ function Reset() {
                     <button
                         className={"h5p-keywords-button-restart"}
                         onClick={togglePopover}
+                        type={"button"}
                     >
                         <span
                             className={"h5p-ri hri-restart"}
