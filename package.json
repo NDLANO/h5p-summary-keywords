@@ -30,7 +30,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.17.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "react-axe": "^3.3.0",
     "resolve-url-loader": "^3.1.1",
     "sass-loader": "^8.0.0",
