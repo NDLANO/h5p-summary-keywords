@@ -1,22 +1,5 @@
 import {escape, decode} from 'he';
 
-export function getBreakpoints() {
-  return [
-    {
-      "className": "h5p-medium-tablet-size",
-      "shouldAdd": width => width >= 500 && width < 768
-    },
-    {
-      "className": "h5p-large-tablet-size",
-      "shouldAdd": width => width >= 768 && width < 1024
-    },
-    {
-      "className": "h5p-large-size",
-      "shouldAdd": width => width >= 1024
-    },
-  ];
-}
-
 export function debounce(func, wait, immediate) {
   let timeout;
   return function () {
@@ -92,4 +75,50 @@ export function sanitizeParams(params) {
     accessibility: handleObject(accessibility),
     resourceReport: handleObject(resourceReport),
   };
+}
+
+/**
+ * CSS classnames and breakpoints for the content type
+ *
+ * @type {{largeTablet: string, large: string, mediumTablet: string}}
+ */
+const SummaryKeywordsClassnames = {
+  'mediumTablet': 'h5p-medium-tablet-size',
+  'largeTablet': 'h5p-large-tablet-size',
+  'large': 'h5p-large-size',
+};
+
+/**
+ * Get list of classname and conditions for when to add the classname to the content type
+ *
+ * @return {[{className: string, shouldAdd: (function(*): boolean)}, {className: string, shouldAdd: (function(*): boolean|boolean)}, {className: string, shouldAdd: (function(*): boolean)}]}
+ */
+export const breakpoints = () => {
+  return [
+    {
+      "className": SummaryKeywordsClassnames.mediumTablet,
+      "shouldAdd": ratio => ratio >= 22 && ratio < 40,
+    },
+    {
+      "className": SummaryKeywordsClassnames.largeTablet,
+      "shouldAdd": ratio => ratio >= 40 && ratio < 60,
+    },
+    {
+      "className": SummaryKeywordsClassnames.large,
+      "shouldAdd": ratio => ratio >= 60,
+    },
+  ];
+};
+
+/**
+ * Get the ratio of the container
+ *
+ * @return {number}
+ */
+export function getRatio(container) {
+  if ( !container) {
+    return;
+  }
+  const computedStyles = window.getComputedStyle(container);
+  return container.offsetWidth / parseFloat(computedStyles.getPropertyValue('font-size'));
 }
