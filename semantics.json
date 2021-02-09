@@ -8,10 +8,18 @@
   {
     "name": "description",
     "type": "text",
-    "widget": "textarea",
+    "widget": "html",
     "label": "Task description",
     "importance": "low",
-    "optional": true
+    "optional": true,
+    "enterMode": "p",
+    "tags": [
+      "strong",
+      "em",
+      "u",
+      "ol",
+      "ul"
+    ]
   },
   {
     "name": "media",
@@ -45,11 +53,19 @@
   {
     "name": "essayInstruction",
     "type": "text",
-    "widget": "textarea",
+    "widget": "html",
     "lines": 3,
     "label": "Essay instruction",
     "importance": "low",
-    "optional": true
+    "optional": true,
+    "enterMode": "p",
+    "tags": [
+      "strong",
+      "em",
+      "u",
+      "ol",
+      "ul"
+    ]
   },
   {
     "name": "resources",
