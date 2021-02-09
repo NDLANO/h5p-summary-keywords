@@ -6,7 +6,7 @@ import { KeywordsContextProvider } from 'context/KeywordsContext';
 import Surface from "components/Surface/Surface";
 import 'components/Keywords.scss';
 import 'fonts/H5PReflectionFont.scss';
-import {getBreakpoints, sanitizeParams} from "components/utils";
+import {breakpoints, getRatio, sanitizeParams} from "components/utils";
 
 // Load library
 H5P = H5P || {};
@@ -30,6 +30,7 @@ H5P.SummaryKeywords = (function () {
     this.language = language;
     this.activityStartTime = new Date();
     this.activeBreakpoints = [];
+    this.currentRatio = null;
 
     this.translations = Object.assign({}, {
       resources: "Resources",
@@ -87,7 +88,7 @@ H5P.SummaryKeywords = (function () {
       // Append elements to DOM
       $container[0].appendChild(this.wrapper);
       $container[0].classList.add('h5p-keywords');
-      container = $container;
+      container = $container[0];
     };
 
     this.getRect = () => {
@@ -96,19 +97,27 @@ H5P.SummaryKeywords = (function () {
 
     this.reset = () => this.resetStack.forEach(callback => callback());
 
-    this.addBreakPoints = wrapper => {
-      const activeBreakpoints = [];
-      const rect = this.getRect();
-      getBreakpoints().forEach(item => {
-        if (item.shouldAdd(rect.width)) {
+    /**
+     * Set css classes based on ratio available to the container
+     *
+     * @param wrapper
+     * @param ratio
+     */
+    this.addBreakPoints = (wrapper, ratio = getRatio(container)) => {
+      if ( ratio === this.currentRatio) {
+        return;
+      }
+      this.activeBreakpoints = [];
+      breakpoints().forEach(item => {
+        if (item.shouldAdd(ratio)) {
           wrapper.classList.add(item.className);
-          activeBreakpoints.push(item.className);
+          this.activeBreakpoints.push(item.className);
         }
         else {
           wrapper.classList.remove(item.className);
         }
       });
-      this.activeBreakpoints = activeBreakpoints;
+      this.currentRatio = ratio;
     };
 
     this.resize = () => {
