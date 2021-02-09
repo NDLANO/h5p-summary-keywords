@@ -1,5 +1,6 @@
 import React, {useRef} from 'react';
 import {useKeywordsContext} from "context/KeywordsContext";
+import ReactHtmlParser from "react-html-parser";
 
 function Essay() {
 
@@ -23,7 +24,7 @@ function Essay() {
     <section className={"h5p-keywords-essay"}>
       <h2 id={"essayHeader"}>{essayHeader}</h2>
       {essayInstruction && (
-        <p id={"essayInstruction"}>{essayInstruction}</p>
+        <div id={"essayInstruction"}>{ReactHtmlParser(essayInstruction)}</div>
       )}
       <textarea
         aria-labelledby={"essayHeader"}
