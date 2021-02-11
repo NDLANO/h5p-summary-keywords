@@ -1,6 +1,6 @@
 import React, {Fragment, useState, useRef, useEffect} from 'react';
 import {useKeywordsContext} from "context/KeywordsContext";
-import { escapeHTML } from 'components/utils';
+import { escapeHTML, stripHTML } from 'components/utils';
 
 function Export() {
 
@@ -63,7 +63,7 @@ function Export() {
 
     return Object.assign({}, translations, {
       mainTitle: header,
-      description,
+      description: stripHTML(description),
       hasResources: resources.length > 0,
       resources: resources,
       keywordHeader: translate('headerKeywords'),

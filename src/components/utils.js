@@ -15,12 +15,18 @@ export function debounce(func, wait, immediate) {
   };
 }
 
-export function stripHTML(html) {
+export function decodeHTML(html) {
   return html ? decode(html) : html;
 }
 
 export function escapeHTML(html) {
   return html ? escape(html) : html;
+}
+
+export function stripHTML(html) {
+  const element = document.createElement('div');
+  element.innerHTML = html;
+  return element.innerText;
 }
 
 export function sanitizeParams(params) {
@@ -30,7 +36,7 @@ export function sanitizeParams(params) {
       return sourceObject;
     }
     return Object.keys(sourceObject).reduce((aggregated, current) => {
-      aggregated[current] = stripHTML(sourceObject[current]);
+      aggregated[current] = decodeHTML(sourceObject[current]);
       return aggregated;
     }, {});
   };
@@ -57,8 +63,8 @@ export function sanitizeParams(params) {
         } = resource;
         return {
           ...resource,
-          title: stripHTML(title),
-          introduction: stripHTML(introduction),
+          title: decodeHTML(title),
+          introduction: decodeHTML(introduction),
         };
       })
     };
@@ -67,10 +73,10 @@ export function sanitizeParams(params) {
   return {
     ...params,
     resources,
-    header: stripHTML(header),
-    description: stripHTML(description),
-    essayHeader: stripHTML(essayHeader),
-    essayInstruction: stripHTML(essayInstruction),
+    header: decodeHTML(header),
+    description: decodeHTML(description),
+    essayHeader: decodeHTML(essayHeader),
+    essayInstruction: decodeHTML(essayInstruction),
     l10n: handleObject(l10n),
     accessibility: handleObject(accessibility),
     resourceReport: handleObject(resourceReport),
