@@ -67,6 +67,7 @@ function Export() {
       hasResources: resources.length > 0,
       resources: resources,
       keywordHeader: translate('headerKeywords'),
+      hasKeywords: keywords.length > 0,
       keywordsList: keywords.join(", "),
       essayHeader: translate('essayHeader'),
       essay: essay,
@@ -80,13 +81,14 @@ function Export() {
             '<h1 class="page-title">{{mainTitle}}</h1>' +
             '</div>' +
             '<div class="page-description">{{description}}</div>' +
+            '{{#hasKeywords}}' +
             '<h2>{{keywordHeader}}</h2>' +
             '<div class="page-keywords">{{keywordsList}}</div>' +
+            '{{/hasKeywords}}' +
             '<h2>{{essayHeader}}</h2>' +
             '<div class="page-essay">{{essay}}</div>' +
-            '<h2>{{header}}</h2>' +
-            '{{^resources}}<p>{{labelNoResources}}</p>{{/resources}}' +
             '{{#hasResources}}' +
+            '<h2>{{header}}</h2>' +
             '<table>' +
             '<tr><th>{{headerTitle}}</th><th>{{headerIntro}}</th><th>{{headerUrl}}</th></tr>' +
             '{{#resources}}<tr><td>{{title}}</td><td>{{introduction}}</td><td>{{url}}</td></tr>{{/resources}}' +
