@@ -71,6 +71,7 @@ function Export() {
       keywordsList: keywords.join(", "),
       essayHeader: translate('essayHeader'),
       essay: essay,
+      hasEssay: essay && essay.length !== 0,
     });
   }
 
@@ -85,8 +86,10 @@ function Export() {
             '<h2>{{keywordHeader}}</h2>' +
             '<div class="page-keywords">{{keywordsList}}</div>' +
             '{{/hasKeywords}}' +
+            '{{#hasEssay}}' +
             '<h2>{{essayHeader}}</h2>' +
             '<div class="page-essay">{{essay}}</div>' +
+            '{{/hasEssay}}' +
             '{{#hasResources}}' +
             '<h2>{{header}}</h2>' +
             '<table>' +
