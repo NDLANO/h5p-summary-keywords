@@ -11,7 +11,7 @@
       "fields": [
         {
           "label": "Highlighted resource",
-          "description": "Optional resource that will be displayed above the keywords."
+          "description": "Optional resource to display above the keywords."
         }
       ]
     },
@@ -24,7 +24,12 @@
     },
     {
       "label": "Resources",
-      "description": "Optional links to resources."
+      "fields": [
+        {
+          "label": "Resources",
+          "description": "Optional links to resources."
+        }
+      ]
     },
     {
       "label": "Behavioural settings",
@@ -39,7 +44,7 @@
           "description": "Set the number of keywords the user has to provide"
         },
         {
-          "label": "Allow the user to exceed the maximum number of keywords",
+          "label": "Allow the user to exceed the maximum number of keywords"
         }
       ]
     },
@@ -47,7 +52,7 @@
       "label": "Localize",
       "fields": [
         {
-          "label": "Label for \"Resources\"-button",
+          "label": "Label for the \"Resources\"-button",
           "default": "Resources"
         },
         {
@@ -64,16 +69,16 @@
         },
         {
           "label": "Label for the \"Add keyword\"-button",
-          "default": "Add keyword"
+          "default": "Add a keyword"
         },
         {
           "label": "Inform the user that data will be lost if he/she continues",
           "default": "If you continue all your changes will be lost"
         },
         {
-          "label": "Text that displays the remaining number of keywords",
-          "description": "Availble varables are :num",
-          "default": ":num remaining keywords"
+          "label": "Label displaying the number of keywords left",
+          "description": "Available variables are :num",
+          "default": ":num keywords left"
         },
         {
           "label": "Placeholder for keyword",

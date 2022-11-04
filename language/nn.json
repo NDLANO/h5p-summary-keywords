@@ -24,7 +24,12 @@
     },
     {
       "label": "Ressurser",
-      "description": "Valgfrie lenker til ressurser."
+      "fields": [
+        {
+          "label": "Ressurser",
+          "description": "Valgfrie lenker til ressurser."
+        }
+      ]
     },
     {
       "label": "Innstillinger",
