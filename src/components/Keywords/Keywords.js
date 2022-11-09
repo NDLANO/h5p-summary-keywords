@@ -1,6 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react';
 import PropTypes from 'prop-types';
-import markerIcon from "@assets/marker.svg";
+import markerIcon from "../../../assets/marker.svg";
 import {debounce} from "../utils";
 import classnames from 'classnames';
 
