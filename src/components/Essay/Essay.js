@@ -22,7 +22,7 @@ function Essay() {
 
   return (
     <section className={"h5p-keywords-essay"}>
-      <h2 id={"essayHeader"}>{essayHeader}</h2>
+      <div id={"essayHeader"}>{essayHeader}</div>
       {essayInstruction && (
         <div id={"essayInstruction"}>{ReactHtmlParser(essayInstruction)}</div>
       )}

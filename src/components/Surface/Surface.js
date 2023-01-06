@@ -40,9 +40,9 @@ function Surface() {
 
   return (
     <article>
-      <h1
+      <div
         className={"h5p-keywords-header"}
-      >{header}</h1>
+      >{header}</div>
       <div
         className={"h5p-keywords-surface-main"}
       >
