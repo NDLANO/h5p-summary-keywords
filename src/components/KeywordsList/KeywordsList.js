@@ -70,7 +70,7 @@ function KeywordsList() {
         disabled={isAddingDisabled()}
       >
         <div>
-          <span className={"fa fa-plus"} aria-hidden={true}/>
+          <span className={"fa fa-plus"} />
           <span
             id={"addKeywordLabel"}
           >

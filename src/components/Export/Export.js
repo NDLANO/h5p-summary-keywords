@@ -109,7 +109,7 @@ function Export() {
         type={"button"}
         onClick={() => setExportObject(getExportObject())}
       >
-        <span className={"h5p-ri hri-document"} aria-hidden={"true"}/>
+        <span className={"h5p-ri hri-document"} />
         {translate('createDocument')}
       </button>
       <div className={"export-container"} ref={exportContainer}/>
