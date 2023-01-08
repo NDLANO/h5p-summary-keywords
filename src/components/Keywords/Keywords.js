@@ -82,7 +82,6 @@ function Keywords({keyword, onChange, keywordPlaceholder, addKeyword, ariaDelete
         >
           <span
             className={'h5p-ri hri-times'}
-            aria-hidden={true}
           />
           <span
             className={"visible-hidden"}
