@@ -45,7 +45,7 @@ function KeywordsList() {
 
   return (
     <section className={"h5p-keywords-keywordslist"}>
-      <h2>{translate('headerKeywords')}</h2>
+      <div className={"h5p-keywords-keywordslist-header"}>{translate('headerKeywords')}</div>
       <div className={"h5p-keywords-keywordslist-container"}>
         {keywordList.length === 0 && (
           <div className={"h5p-keywords-no-keywords"}>{translate('noKeywordsAdded')}</div>

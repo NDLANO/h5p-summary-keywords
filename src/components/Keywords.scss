@@ -163,13 +163,16 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   }
 }
 
-.h5p-keywords-keywordslist h2,
-#essayHeader {
+.h5p-keywords-keywordslist,
+#essayHeader, .h5p-keywords-keywordslist-header {
   font-size: 1rem;
+  font-weight: bold;
   line-height: 1.5625rem;
   color: #121212;
   text-decoration: none solid rgb(18, 18, 18);
   margin-bottom: 0.5rem;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
 }
 
 .h5p-keywords-keyword-button {
@@ -417,6 +420,26 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
 }
 
 .export-preview {
+  .h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+
+  .h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+
   .page-description {
     font-style: italic;
   }

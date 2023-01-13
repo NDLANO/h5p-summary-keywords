@@ -79,19 +79,19 @@ function Export() {
     const documentExportTemplate =
             '<section class="export-preview">' +
             '<div class="page-header" role="heading" tabindex="-1">' +
-            '<h1 class="page-title">{{mainTitle}}</h1>' +
+            '<div class="page-title h1">{{mainTitle}}</div>' +
             '</div>' +
             '<div class="page-description">{{description}}</div>' +
             '{{#hasKeywords}}' +
-            '<h2>{{keywordHeader}}</h2>' +
+            '<div class="h2">{{keywordHeader}}</div>' +
             '<div class="page-keywords">{{keywordsList}}</div>' +
             '{{/hasKeywords}}' +
             '{{#hasEssay}}' +
-            '<h2>{{essayHeader}}</h2>' +
+            '<div class="h2">{{essayHeader}}</div>' +
             '<div class="page-essay">{{essay}}</div>' +
             '{{/hasEssay}}' +
             '{{#hasResources}}' +
-            '<h2>{{header}}</h2>' +
+            '<div class="h2">{{header}}</div>' +
             '<table>' +
             '<tr><th>{{headerTitle}}</th><th>{{headerIntro}}</th><th>{{headerUrl}}</th></tr>' +
             '{{#resources}}<tr><td>{{title}}</td><td>{{introduction}}</td><td>{{url}}</td></tr>{{/resources}}' +
