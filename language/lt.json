@@ -1,0 +1,152 @@
+{
+  "semantics": [
+    {
+      "label": "Antraštė"
+    },
+    {
+      "label": "Užduoties aprašymas"
+    },
+    {
+      "label": "Įterptas šaltinis",
+      "fields": [
+        {
+          "label": "Paryškintas šaltinis",
+          "description": "Pasirenkamas šaltinis, rodomas virš raktinių žodžių."
+        }
+      ]
+    },
+    {
+      "label": "Rašinys",
+      "default": "Essay"
+    },
+    {
+      "label": "Essay instruction"
+    },
+    {
+      "label": "Resources",
+      "fields": [
+        {
+          "label": "Resources",
+          "description": "Optional links to resources."
+        }
+      ]
+    },
+    {
+      "label": "Behavioural settings",
+      "description": "These options will let you control the behaviour.",
+      "fields": [
+        {
+          "label": "Enable retry?",
+          "description": "Tick off this if you want the user to be able to retry"
+        },
+        {
+          "label": "Number of keywords",
+          "description": "Set the number of keywords the user has to provide"
+        },
+        {
+          "label": "Allow the user to exceed the maximum number of keywords"
+        }
+      ]
+    },
+    {
+      "label": "Localize",
+      "fields": [
+        {
+          "label": "Label for the \"Resources\"-button",
+          "default": "Resources"
+        },
+        {
+          "label": "Label for the \"Restart\"-button",
+          "default": "Restart"
+        },
+        {
+          "label": "Label for the \"Continue\"-button",
+          "default": "Continue"
+        },
+        {
+          "label": "Label for the \"Cancel\"-button",
+          "default": "Cancel"
+        },
+        {
+          "label": "Label for the \"Add keyword\"-button",
+          "default": "Add a keyword"
+        },
+        {
+          "label": "Inform the user that data will be lost if he/she continues",
+          "default": "If you continue all your changes will be lost"
+        },
+        {
+          "label": "Label displaying the number of keywords left",
+          "description": "Available variables are :num",
+          "default": ":num keywords left"
+        },
+        {
+          "label": "Placeholder for keyword",
+          "default": "Type a keyword..."
+        },
+        {
+          "label": "Placeholder in the essay textbox",
+          "default": "Type your answer here"
+        },
+        {
+          "label": "Text displayed when no keywords are added",
+          "default": "No keywords added"
+        }
+      ]
+    },
+    {
+      "label": "Resource report",
+      "fields": [
+        {
+          "label": "Label for \"Create document\"-button",
+          "default": "Create document"
+        },
+        {
+          "label": "Label on \"Export\" button",
+          "default": "Export"
+        },
+        {
+          "label": "Label on \"Select all\" button",
+          "default": "Select all"
+        },
+        {
+          "label": "Header for keywords",
+          "default": "Keywords"
+        },
+        {
+          "label": "Header above the \"Resource\" table",
+          "default": "Resources"
+        },
+        {
+          "label": "Title header in resource table",
+          "default": "Title"
+        },
+        {
+          "label": "Intro header in resource table",
+          "default": "Intro"
+        },
+        {
+          "label": "Url header in resource table",
+          "default": "Url"
+        },
+        {
+          "label": "Label when no resources are found",
+          "default": "No resources"
+        }
+      ]
+    },
+    {
+      "label": "Accessibility",
+      "fields": [
+        {
+          "label": "Used instead of 'Close'-icon",
+          "default": "Close"
+        },
+        {
+          "label": "Used instead of 'Delete'-icon",
+          "default": "Delete"
+        }
+      ]
+    }
+  ]
+}

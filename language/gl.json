@@ -1,0 +1,152 @@
+{
+  "semantics": [
+    {
+      "label": "Cabeceira"
+    },
+    {
+      "label": "Descrición da tarefa"
+    },
+    {
+      "label": "Recurso incrustado",
+      "fields": [
+        {
+          "label": "Recurso destacado",
+          "description": "Recurso opcional para amosar enriba das palabras chave."
+        }
+      ]
+    },
+    {
+      "label": "Ensaio",
+      "default": "Ensaio"
+    },
+    {
+      "label": "Instrucións para o ensaio"
+    },
+    {
+      "label": "Recursos",
+      "fields": [
+        {
+          "label": "Recursos",
+          "description": "Enlaces opcionais a recursos."
+        }
+      ]
+    },
+    {
+      "label": "Configuración do comportamento",
+      "description": "Estas opcións permitiranche controlar o comportamento.",
+      "fields": [
+        {
+          "label": "Activar tentar de novo?",
+          "description": "Marca isto se queres que o usuario poida tentar de novo"
+        },
+        {
+          "label": "Número de palabras chave",
+          "description": "Establece o número de palabras chave que debe proporcionar o usuario"
+        },
+        {
+          "label": "Permitir que o usuario supere o número máximo de palabras chave"
+        }
+      ]
+    },
+    {
+      "fields": [
+        {
+          "label": "Etiqueta para o botón «Recursos»",
+          "default": "Recursos"
+        },
+        {
+          "label": "Etiqueta para o botón \"Reiniciar\"",
+          "default": "Reiniciar"
+        },
+        {
+          "label": "Etiqueta para o botón \"Continuar\"",
+          "default": "Continuar"
+        },
+        {
+          "label": "Etiqueta para o botón \"Cancelar\"",
+          "default": "Cancelar"
+        },
+        {
+          "label": "Etiqueta para o botón \"Engadir palabra chave\"",
+          "default": "Engadir unha palabra chave"
+        },
+        {
+          "label": "Informar ao usuario de que os datos perderanse se continúa",
+          "default": "Perderanse todos os teus cambios se continúas"
+        },
+        {
+          "label": "Etiqueta que amosa o número de palabras chave restantes",
+          "description": "As variables dispoñibles son:num",
+          "default": ":num palabras chave restantes"
+        },
+        {
+          "label": "Marcador de posición para a palabra chave",
+          "default": "Escribe unha palabra chave..."
+        },
+        {
+          "label": "Texto por defecto para a caixa de texto do ensaio",
+          "default": "Escribe aquí a túa resposta"
+        },
+        {
+          "label": "Texto amosado cando non se engaden palabras chave",
+          "default": "Non se engadiron palabras chave"
+        }
+      ],
+      "label": "Adaptación local"
+    },
+    {
+      "fields": [
+        {
+          "label": "Etiqueta para o botón \"Crear documento\"",
+          "default": "Crear documento"
+        },
+        {
+          "label": "Etiqueta para o botón \"Exportar\"",
+          "default": "Exportar"
+        },
+        {
+          "label": "Etiqueta para o botón \"Seleccionar todo\"",
+          "default": "Seleccionar todo"
+        },
+        {
+          "label": "Cabeceira para palabras chave",
+          "default": "Palabras chave"
+        },
+        {
+          "label": "Cabeceira da táboa \"Recurso\"",
+          "default": "Recursos"
+        },
+        {
+          "label": "Título da cabeceira da táboa de recursos",
+          "default": "Título"
+        },
+        {
+          "label": "Encabezado de introdución na táboa de recursos",
+          "default": "Introdución"
+        },
+        {
+          "label": "Encabezado de Url na táboa de recursos",
+          "default": "URL"
+        },
+        {
+          "label": "Etiqueta cando non se atopan recursos",
+          "default": "Non hai recursos"
+        }
+      ],
+      "label": "Informe de recursos"
+    },
+    {
+      "label": "Accesibilidade",
+      "fields": [
+        {
+          "label": "Empregado no canto da icona «Pechar»",
+          "default": "Pechar"
+        },
+        {
+          "label": "Usado en lugar da icona \"Eliminar\"",
+          "default": "Borrar"
+        }
+      ]
+    }
+  ]
+}
