@@ -30,8 +30,8 @@ export function stripHTML(html) {
 }
 
 export function sanitizeParams(params) {
-  const filterResourceList = element => Object.keys(element).length !== 0 && element.constructor === Object;
-  const handleObject = sourceObject => {
+  const filterResourceList = (element) => Object.keys(element).length !== 0 && element.constructor === Object;
+  const handleObject = (sourceObject) => {
     if ( sourceObject === undefined || sourceObject === null || !filterResourceList(sourceObject)) {
       return sourceObject;
     }
@@ -56,7 +56,7 @@ export function sanitizeParams(params) {
     resources.params = {
       ...resources.params,
       l10n: handleObject(resources.params.l10n),
-      resourceList: resources.params.resourceList.filter(filterResourceList).map(resource => {
+      resourceList: resources.params.resourceList.filter(filterResourceList).map((resource) => {
         const {
           title,
           introduction,
@@ -102,16 +102,16 @@ const SummaryKeywordsClassnames = {
 export const breakpoints = () => {
   return [
     {
-      "className": SummaryKeywordsClassnames.mediumTablet,
-      "shouldAdd": ratio => ratio >= 22 && ratio < 40,
+      'className': SummaryKeywordsClassnames.mediumTablet,
+      'shouldAdd': (ratio) => ratio >= 22 && ratio < 40,
     },
     {
-      "className": SummaryKeywordsClassnames.largeTablet,
-      "shouldAdd": ratio => ratio >= 40 && ratio < 60,
+      'className': SummaryKeywordsClassnames.largeTablet,
+      'shouldAdd': (ratio) => ratio >= 40 && ratio < 60,
     },
     {
-      "className": SummaryKeywordsClassnames.large,
-      "shouldAdd": ratio => ratio >= 60,
+      'className': SummaryKeywordsClassnames.large,
+      'shouldAdd': (ratio) => ratio >= 60,
     },
   ];
 };

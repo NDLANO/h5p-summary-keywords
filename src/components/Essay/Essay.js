@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
-import {useKeywordsContext} from "context/KeywordsContext";
-import ReactHtmlParser from "react-html-parser";
+import {useKeywordsContext} from 'context/KeywordsContext';
+import ReactHtmlParser from 'react-html-parser';
 
 function Essay() {
 
@@ -21,14 +21,14 @@ function Essay() {
   collectExportValues('essay', () => essayRef.current.value);
 
   return (
-    <section className={"h5p-keywords-essay"}>
-      <div id={"essayHeader"}>{essayHeader}</div>
+    <section className={'h5p-keywords-essay'}>
+      <div id={'essayHeader'}>{essayHeader}</div>
       {essayInstruction && (
-        <div id={"essayInstruction"}>{ReactHtmlParser(essayInstruction)}</div>
+        <div id={'essayInstruction'}>{ReactHtmlParser(essayInstruction)}</div>
       )}
       <textarea
-        aria-labelledby={"essayHeader"}
-        aria-describedby={essayInstruction ? "essayInstrucion" : ""}
+        aria-labelledby={'essayHeader'}
+        aria-describedby={essayInstruction ? 'essayInstrucion' : ''}
         ref={essayRef}
         placeholder={translate('essayPlaceholder')}
       />

@@ -1,7 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react';
 import PropTypes from 'prop-types';
-import markerIcon from "../../../assets/marker.svg";
-import {debounce} from "../utils";
+import markerIcon from '../../../assets/marker.svg';
+import {debounce} from '../utils';
 import classnames from 'classnames';
 
 function Keywords({keyword, onChange, keywordPlaceholder, addKeyword, ariaDelete, onDelete}) {
@@ -45,12 +45,12 @@ function Keywords({keyword, onChange, keywordPlaceholder, addKeyword, ariaDelete
 
   return (
     <div
-      className={"h5p-keywords-keyword-container"}
+      className={'h5p-keywords-keyword-container'}
     >
-      <div className={"h5p-keywords-keyword-container-inner"}>
+      <div className={'h5p-keywords-keyword-container-inner'}>
         <label
-          className={classnames("h5p-keywords-keyword", {
-            "hidden": !inEditMode
+          className={classnames('h5p-keywords-keyword', {
+            'hidden': !inEditMode
           })}
         >
           <input
@@ -65,26 +65,26 @@ function Keywords({keyword, onChange, keywordPlaceholder, addKeyword, ariaDelete
           />
         </label>
         <div
-          className={classnames("h5p-keywords-keyword", {
-            "hidden": inEditMode,
+          className={classnames('h5p-keywords-keyword', {
+            'hidden': inEditMode,
           })}
           onClick={() => toggleEditMode(true)}
           onKeyPress={handleKeyPress}
-          role={"button"}
+          role={'button'}
           tabIndex={0}
         >
           {keyword.length > 0 ? keyword : keywordPlaceholder}
         </div>
         <button
           onClick={onDelete}
-          type={"button"}
-          className={"h5p-keywords-keyword-button"}
+          type={'button'}
+          className={'h5p-keywords-keyword-button'}
         >
           <span
             className={'h5p-ri hri-times'}
           />
           <span
-            className={"visible-hidden"}
+            className={'visible-hidden'}
           >{ariaDelete}</span>
         </button>
       </div>

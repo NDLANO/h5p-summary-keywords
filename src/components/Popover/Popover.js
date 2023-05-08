@@ -1,17 +1,17 @@
 import React from 'react';
 import TinyPopover, {ArrowContainer} from 'react-tiny-popover';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-const Popover = ({handleClose, show, children, popoverContent, classnames = [], header, close, align = "end"}) => {
-  classnames.push("h5p-keywords-popover");
+const Popover = ({handleClose, show, children, popoverContent, classnames = [], header, close, align = 'end'}) => {
+  classnames.push('h5p-keywords-popover');
   return (
     <TinyPopover
-      containerClassName={classnames.join(" ")}
+      containerClassName={classnames.join(' ')}
       isOpen={show}
       position={['top', 'bottom']}
       windowBorderPadding={10}
       containerStyle={{
-        overflow: "unset",
+        overflow: 'unset',
       }}
       align={align}
       onClickOutside={handleClose}
@@ -24,25 +24,25 @@ const Popover = ({handleClose, show, children, popoverContent, classnames = [], 
           arrowSize={10}
         >
           <div
-            className={"h5p-keywords-popover-container"}
+            className={'h5p-keywords-popover-container'}
           >
-            <div className={"h5p-keywords-popover-header"}>
+            <div className={'h5p-keywords-popover-header'}>
               <div>
                 {header}
               </div>
               <button
                 onClick={handleClose}
                 aria-label={close}
-                type={"button"}
-                className={"close-button"}
+                type={'button'}
+                className={'close-button'}
               >
                 <span
-                  className={"h5p-ri hri-close"}
+                  className={'h5p-ri hri-close'}
                 />
               </button>
             </div>
             <div
-              className={"h5p-keywords-popover-content"}
+              className={'h5p-keywords-popover-content'}
             >
               {popoverContent}
             </div>

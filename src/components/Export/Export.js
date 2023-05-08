@@ -1,5 +1,5 @@
 import React, {Fragment, useState, useRef, useEffect} from 'react';
-import {useKeywordsContext} from "context/KeywordsContext";
+import {useKeywordsContext} from 'context/KeywordsContext';
 import { escapeHTML, stripHTML } from 'components/utils';
 
 function Export() {
@@ -15,65 +15,6 @@ function Export() {
     translate,
     collectExportValues,
   } = context;
-
-  useEffect(() => {
-    if ( exportObject ) {
-      attachExport();
-    }
-  }, [exportObject]);
-
-  useEffect(() => {
-    if ( exportDocument ) {
-      H5P.$window.on('resize', () => exportDocument.trigger('resize'));
-    }
-  }, [exportDocument]);
-
-  function attachExport() {
-    context.triggerXAPIScored(0, 0, 'completed');
-
-    const useExport = H5PIntegration.reportingIsEnabled || false;
-    const exportDocument = new H5P.ExportPage(
-      escapeHTML(exportObject.mainTitle),
-      getExportPreview(),
-      useExport,
-      escapeHTML(translate('submitText')),
-      escapeHTML(translate('submitConfirmedText')),
-      escapeHTML(translate('selectAll')),
-      escapeHTML(translate('export')),
-      H5P.instances[0].getLibraryFilePath('exportTemplate.docx'),
-      exportObject
-    );
-    exportDocument.getElement().prependTo(exportContainer.current);
-    setExportDocument(exportDocument);
-  }
-
-  function getExportObject() {
-    const {
-      params: {
-        header,
-        description = '',
-      },
-    } = context;
-
-    const {
-      resources = [],
-      keywords = [],
-      essay = '',
-    } = collectExportValues();
-
-    return Object.assign({}, translations, {
-      mainTitle: header,
-      description: stripHTML(description),
-      hasResources: resources.length > 0,
-      resources: resources,
-      keywordHeader: translate('headerKeywords'),
-      hasKeywords: keywords.length > 0,
-      keywordsList: keywords.join(", "),
-      essayHeader: translate('essayHeader'),
-      essay: essay,
-      hasEssay: essay && essay.length !== 0,
-    });
-  }
 
   function getExportPreview() {
     const documentExportTemplate =
@@ -102,17 +43,76 @@ function Export() {
     return Mustache.render(documentExportTemplate, exportObject);
   }
 
+  function attachExport() {
+    context.triggerXAPIScored(0, 0, 'completed');
+
+    const useExport = H5PIntegration.reportingIsEnabled || false;
+    const exportDocument = new H5P.ExportPage(
+      escapeHTML(exportObject.mainTitle),
+      getExportPreview(),
+      useExport,
+      escapeHTML(translate('submitText')),
+      escapeHTML(translate('submitConfirmedText')),
+      escapeHTML(translate('selectAll')),
+      escapeHTML(translate('export')),
+      H5P.instances[0].getLibraryFilePath('exportTemplate.docx'),
+      exportObject
+    );
+    exportDocument.getElement().prependTo(exportContainer.current);
+    setExportDocument(exportDocument);
+  }
+
+  useEffect(() => {
+    if ( exportObject ) {
+      attachExport();
+    }
+  }, [exportObject]);
+
+  useEffect(() => {
+    if ( exportDocument ) {
+      H5P.$window.on('resize', () => exportDocument.trigger('resize'));
+    }
+  }, [exportDocument]);
+
+  function getExportObject() {
+    const {
+      params: {
+        header,
+        description = '',
+      },
+    } = context;
+
+    const {
+      resources = [],
+      keywords = [],
+      essay = '',
+    } = collectExportValues();
+
+    return Object.assign({}, translations, {
+      mainTitle: header,
+      description: stripHTML(description),
+      hasResources: resources.length > 0,
+      resources: resources,
+      keywordHeader: translate('headerKeywords'),
+      hasKeywords: keywords.length > 0,
+      keywordsList: keywords.join(', '),
+      essayHeader: translate('essayHeader'),
+      essay: essay,
+      hasEssay: essay && essay.length !== 0,
+    });
+  }
+
   return (
     <Fragment>
       <button
-        className={"h5p-keywords-button-export"}
-        type={"button"}
+        className={'h5p-keywords-button-export'}
+        type={'button'}
         onClick={() => setExportObject(getExportObject())}
       >
-        <span className={"h5p-ri hri-document"} />
+        <span className={'h5p-ri hri-document'} />
         {translate('createDocument')}
       </button>
-      <div className={"export-container"} ref={exportContainer}/>
+      <div className={'export-container'} ref={exportContainer}/>
     </Fragment>
   );
 }

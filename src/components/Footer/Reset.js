@@ -1,11 +1,18 @@
 import React, {Fragment, useState} from 'react';
-import {useKeywordsContext} from "context/KeywordsContext";
-import Popover from "../Popover/Popover";
+import {useKeywordsContext} from 'context/KeywordsContext';
+import Popover from '../Popover/Popover';
 
 function Reset() {
 
   const [showPopover, setPopover] = useState(false);
   const context = useKeywordsContext();
+  const {
+    behaviour: {
+      enableRetry = false
+    },
+    reset,
+    translate
+  } = context;
 
   function togglePopover() {
     setPopover(!showPopover);
@@ -16,14 +23,6 @@ function Reset() {
     togglePopover();
   }
 
-  const {
-    behaviour: {
-      enableRetry = false
-    },
-    reset,
-    translate
-  } = context;
-
   return (
     <Fragment>
       {enableRetry === true && (
@@ -33,30 +32,30 @@ function Reset() {
           classnames={Array.from(context.activeBreakpoints)}
           close={translate('close')}
           header={translate('restart')}
-          align={"start"}
+          align={'start'}
           popoverContent={(
             <div
-              role={"dialog"}
-              aria-labelledby={"resetTitle"}
-              className={"h5p-keywords-reset-modal"}
+              role={'dialog'}
+              aria-labelledby={'resetTitle'}
+              className={'h5p-keywords-reset-modal'}
             >
               <div
-                id={"resetTitle"}
+                id={'resetTitle'}
               >
                 {translate('ifYouContinueAllYourChangesWillBeLost')}
               </div>
               <div>
                 <button
                   onClick={confirmReset}
-                  className={"continue"}
-                  type={"button"}
+                  className={'continue'}
+                  type={'button'}
                 >
                   {translate('continue')}
                 </button>
                 <button
                   onClick={togglePopover}
-                  className={"cancel"}
-                  type={"button"}
+                  className={'cancel'}
+                  type={'button'}
                 >
                   {translate('cancel')}
                 </button>
@@ -65,12 +64,12 @@ function Reset() {
           )}
         >
           <button
-            className={"h5p-keywords-button-restart"}
+            className={'h5p-keywords-button-restart'}
             onClick={togglePopover}
-            type={"button"}
+            type={'button'}
           >
             <span
-              className={"h5p-ri hri-restart"}
+              className={'h5p-ri hri-restart'}
             />
             {translate('restart')}
           </button>
