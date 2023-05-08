@@ -4,7 +4,7 @@ import KeywordsList from '../KeywordsList/KeywordsList';
 import Essay from '../Essay/Essay';
 import Footer from '../Footer/Footer';
 import Media from '../Media/Media';
-import ReactHtmlParser from 'react-html-parser';
+import parseHTML from 'html-react-parser';
 
 function Surface() {
 
@@ -51,7 +51,7 @@ function Surface() {
           ref={resourceContainer}
         >
           {description && (
-            <div className={'h5p-keywords-description'}>{ReactHtmlParser(description)}</div>
+            <div className={'h5p-keywords-description'}>{parseHTML(description)}</div>
           )}
         </div>
         <Media
