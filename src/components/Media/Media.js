@@ -12,7 +12,7 @@ function Media({mediaParams, id, onLoaded}) {
         H5P.on(media, 'loaded', onLoaded);
       }
       catch (e) {
-        console.log(e);
+        console.warn(e);
       }
     }
   }, [mediaParams]);
@@ -21,7 +21,7 @@ function Media({mediaParams, id, onLoaded}) {
     <>
       {typeof mediaParams === 'object' && (
         <div
-          className={"h5p-keywords-media"}
+          className={'h5p-keywords-media'}
           ref={mediaContainer}
         />
       )}

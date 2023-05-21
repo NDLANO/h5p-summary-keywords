@@ -1,15 +1,12 @@
-import "core-js";
-import "regenerator-runtime/runtime";
 import React from 'react';
-import ReactDOM from "react-dom";
+import ReactDOM from 'react-dom';
 import { KeywordsContextProvider } from 'context/KeywordsContext';
-import Surface from "components/Surface/Surface";
+import Surface from 'components/Surface/Surface';
 import 'components/Keywords.scss';
 import 'fonts/H5PReflectionFont.scss';
-import {breakpoints, getRatio, sanitizeParams} from "components/utils";
+import {breakpoints, getRatio, sanitizeParams} from 'components/utils';
 
 // Load library
-H5P = H5P || {};
 H5P.SummaryKeywords = (function () {
 
   function Wrapper(params, contentId, extras = {}) {
@@ -33,22 +30,22 @@ H5P.SummaryKeywords = (function () {
     this.currentRatio = null;
 
     this.translations = Object.assign({}, {
-      resources: "Resources",
-      save: "Save",
-      restart: "Restart",
-      createDocument: "Create document",
-      labelResources: "Resources",
-      selectAll: "Select all",
-      export: "Export",
-      add: "Add new keyword",
-      delete: "Delete",
-      ifYouContinueAllYourChangesWillBeLost: "If you continue all your changes will be lost.",
-      close: "Close",
-      keywordsLeft: ":num keywords left",
-      essayHeader: "Essay",
-      keywordPlaceholder: "Type a keyword...",
-      continue: "Continue",
-      cancel: "Cancel",
+      resources: 'Resources',
+      save: 'Save',
+      restart: 'Restart',
+      createDocument: 'Create document',
+      labelResources: 'Resources',
+      selectAll: 'Select all',
+      export: 'Export',
+      add: 'Add new keyword',
+      delete: 'Delete',
+      ifYouContinueAllYourChangesWillBeLost: 'If you continue all your changes will be lost.',
+      close: 'Close',
+      keywordsLeft: ':num keywords left',
+      essayHeader: 'Essay',
+      keywordPlaceholder: 'Type a keyword...',
+      continue: 'Continue',
+      cancel: 'Cancel',
       essayInstruction: 'Write down an essay using the keywords you picked',
       essayPlaceholder: 'Type your answer here',
     }, this.params.l10n, this.params.resourceReport, this.params.accessibility);
@@ -68,7 +65,7 @@ H5P.SummaryKeywords = (function () {
     };
 
     this.collectExportValues = (index, callback) => {
-      if (typeof index !== "undefined") {
+      if (typeof index !== 'undefined') {
         this.collectExportValuesStack.push({key: index, callback: callback});
       }
       else {
@@ -78,9 +75,9 @@ H5P.SummaryKeywords = (function () {
       }
     };
 
-    this.registerReset = callback => this.resetStack.push(callback);
+    this.registerReset = (callback) => this.resetStack.push(callback);
 
-    this.attach = $container => {
+    this.attach = ($container) => {
       if (!this.wrapper) {
         createElements();
       }
@@ -95,7 +92,7 @@ H5P.SummaryKeywords = (function () {
       return this.wrapper.getBoundingClientRect();
     };
 
-    this.reset = () => this.resetStack.forEach(callback => callback());
+    this.reset = () => this.resetStack.forEach((callback) => callback());
 
     /**
      * Set css classes based on ratio available to the container
@@ -108,7 +105,7 @@ H5P.SummaryKeywords = (function () {
         return;
       }
       this.activeBreakpoints = [];
-      breakpoints().forEach(item => {
+      breakpoints().forEach((item) => {
         if (item.shouldAdd(ratio)) {
           wrapper.classList.add(item.className);
           this.activeBreakpoints.push(item.className);
@@ -139,7 +136,7 @@ H5P.SummaryKeywords = (function () {
       if (vars !== undefined && vars !== null) {
         translation = Object
           .keys(vars)
-          .map(key => translation.replace(key, vars[key]))
+          .map((key) => translation.replace(key, vars[key]))
           .toString();
       }
       return translation;
