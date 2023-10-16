@@ -175,6 +175,12 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   margin-block-end: 0.83em;
 }
 
+#essayHeader,
+.h5p-keywords-keywordslist-header {
+  font-size: 1.125rem;
+  margin-block-start: 1.5rem;
+}
+
 .h5p-keywords-keyword-button {
   border: 0;
   background-color: transparent;
