@@ -255,16 +255,16 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   & > div {
     border-radius: $borderRadius;
     background-color: rgba(219,226,232,0.25);
-    color: #212121;
+    color: #363636;
     font-weight: bold;
-    font-size: 0.875rem;
-    font-style: italic;
+    font-size: 1rem;
     padding: 0.3125rem 0.625rem;
     align-items: center;
     display: flex;
   }
 
   .fa {
+    color: inherit;
     margin-right: 0.5675rem;
     font-size: 1.5rem;
   }
