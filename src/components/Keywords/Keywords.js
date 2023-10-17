@@ -28,7 +28,8 @@ function Keywords({keyword, onChange, keywordPlaceholder, addKeyword, ariaDelete
     toggleEditMode(false);
   }
 
-  function handleKeyPress(event) {
+  function handleKeyDown(event) {
+    // If enter is pressed
     if (event.which === 13) {
       if (inEditMode) {
         handleBlur(event);
@@ -37,6 +38,7 @@ function Keywords({keyword, onChange, keywordPlaceholder, addKeyword, ariaDelete
         toggleEditMode(true);
       }
     }
+    // If space is pressed
     if (event.which === 32 && !inEditMode) {
       toggleEditMode(true);
     }
@@ -54,7 +56,7 @@ function Keywords({keyword, onChange, keywordPlaceholder, addKeyword, ariaDelete
         >
           <input
             ref={inputRef}
-            onKeyPress={handleKeyPress}
+            onKeyDown={handleKeyDown}
             onBlur={handleBlur}
             onChange={debounce(() => onChange(inputRef.current.value), 100)}
             placeholder={keywordPlaceholder}
@@ -65,7 +67,7 @@ function Keywords({keyword, onChange, keywordPlaceholder, addKeyword, ariaDelete
             'hidden': inEditMode,
           })}
           onClick={() => toggleEditMode(true)}
-          onKeyPress={handleKeyPress}
+          onKeyDown={handleKeyDown}
           role={'button'}
           tabIndex={0}
         >
