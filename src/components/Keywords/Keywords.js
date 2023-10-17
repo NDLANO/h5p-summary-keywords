@@ -1,6 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
 import PropTypes from 'prop-types';
-import markerIcon from '../../../assets/marker.svg';
 import {debounce} from '../utils';
 import classnames from 'classnames';
 
@@ -59,9 +58,6 @@ function Keywords({keyword, onChange, keywordPlaceholder, addKeyword, ariaDelete
             onBlur={handleBlur}
             onChange={debounce(() => onChange(inputRef.current.value), 100)}
             placeholder={keywordPlaceholder}
-            style={{
-              backgroundImage: 'url(' + markerIcon + ')',
-            }}
           />
         </label>
         <div

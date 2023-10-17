@@ -154,10 +154,7 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   text-overflow: ellipsis;
 
   & > input {
-    background-repeat: no-repeat;
-    padding-left: 1rem;
     border: 1px solid #535c69;
-    background-position: left;
     height: 2rem;
   }
 }
