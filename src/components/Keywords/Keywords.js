@@ -60,6 +60,7 @@ function Keywords({keyword, onChange, keywordPlaceholder, addKeyword, ariaDelete
             onBlur={handleBlur}
             onChange={debounce(() => onChange(inputRef.current.value), 100)}
             placeholder={keywordPlaceholder}
+            size={keyword ? keyword.length : keywordPlaceholder.length}
           />
         </label>
         <div

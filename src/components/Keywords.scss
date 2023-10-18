@@ -155,7 +155,10 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
 
   & > input {
     border: 1px solid #535c69;
+    box-sizing: border-box;
     height: 2rem;
+    min-width: 7rem;
+    max-width: 15rem;
   }
 }
 
