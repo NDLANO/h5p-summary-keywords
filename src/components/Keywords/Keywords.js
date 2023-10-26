@@ -30,7 +30,7 @@ function Keywords({keyword, onChange, keywordPlaceholder, addKeyword, ariaDelete
 
   function handleKeyDown(event) {
     // If enter is pressed
-    if (event.which === 13) {
+    if (event.key === 'Enter') {
       if (inEditMode) {
         handleBlur(event);
       }
@@ -39,7 +39,7 @@ function Keywords({keyword, onChange, keywordPlaceholder, addKeyword, ariaDelete
       }
     }
     // If space is pressed
-    if (event.which === 32 && !inEditMode) {
+    if (event.key === ' ' && !inEditMode) {
       toggleEditMode(true);
     }
   }
