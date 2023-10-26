@@ -28,7 +28,7 @@ function Essay() {
       )}
       <textarea
         aria-labelledby={'essayHeader'}
-        aria-describedby={essayInstruction ? 'essayInstrucion' : ''}
+        aria-describedby={essayInstruction ? 'essayInstrucion' : undefined}
         ref={essayRef}
         placeholder={translate('essayPlaceholder')}
       />
