@@ -1,10 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { KeywordsContextProvider } from 'context/KeywordsContext';
 import Surface from 'components/Surface/Surface';
 import 'components/Keywords.scss';
 import 'fonts/H5PReflectionFont.scss';
-import {breakpoints, getRatio, sanitizeParams} from 'components/utils';
+import { breakpoints, getRatio, sanitizeParams } from 'components/utils';
 
 // Load library
 H5P.SummaryKeywords = (function () {
@@ -56,21 +56,21 @@ H5P.SummaryKeywords = (function () {
       wrapper.classList.add('h5p-keywords-wrapper');
       this.wrapper = wrapper;
 
-      ReactDOM.render(
+      const root = createRoot(this.wrapper);
+      root.render(
         <KeywordsContextProvider value={this}>
-          <Surface/>
-        </KeywordsContextProvider>,
-        this.wrapper
+          <Surface />
+        </KeywordsContextProvider>
       );
     };
 
     this.collectExportValues = (index, callback) => {
       if (typeof index !== 'undefined') {
-        this.collectExportValuesStack.push({key: index, callback: callback});
+        this.collectExportValuesStack.push({ key: index, callback: callback });
       }
       else {
         const exportValues = {};
-        this.collectExportValuesStack.forEach(({key, callback}) => exportValues[key] = callback());
+        this.collectExportValuesStack.forEach(({ key, callback }) => exportValues[key] = callback());
         return exportValues;
       }
     };
@@ -101,7 +101,7 @@ H5P.SummaryKeywords = (function () {
      * @param ratio
      */
     this.addBreakPoints = (wrapper, ratio = getRatio(container)) => {
-      if ( ratio === this.currentRatio) {
+      if (ratio === this.currentRatio) {
         return;
       }
       this.activeBreakpoints = [];
@@ -125,12 +125,12 @@ H5P.SummaryKeywords = (function () {
     };
 
     /**
-         * Help fetch the correct translations.
-         *
-         * @params key
-         * @params vars
-         * @return {string}
-         */
+     * Help fetch the correct translations.
+     *
+     * @params key
+     * @params vars
+     * @return {string}
+     */
     this.translate = (key, vars) => {
       let translation = this.translations[key];
       if (vars !== undefined && vars !== null) {
