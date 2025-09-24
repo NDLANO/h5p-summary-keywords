@@ -1,5 +1,5 @@
-import React, {Fragment, useState, useRef, useEffect} from 'react';
-import {useKeywordsContext} from 'context/KeywordsContext';
+import React, { Fragment, useState, useRef, useEffect } from 'react';
+import { useKeywordsContext } from 'context/KeywordsContext';
 import { escapeHTML, stripHTML } from 'components/utils';
 
 function Export() {

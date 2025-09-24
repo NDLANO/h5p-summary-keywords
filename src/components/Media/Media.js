@@ -1,12 +1,12 @@
-import React, {useEffect, useRef} from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-function Media({mediaParams, id, onLoaded}) {
+function Media({ mediaParams, id, onLoaded }) {
 
   const mediaContainer = useRef();
 
   useEffect(() => {
-    if ( typeof mediaParams === 'object') {
+    if ( typeof mediaParams === 'object' && mediaParams.parmams && Object.keys(mediaParams).length) {
       try {
         const media = H5P.newRunnable(mediaParams, id, H5P.jQuery(mediaContainer.current));
         H5P.on(media, 'loaded', onLoaded);

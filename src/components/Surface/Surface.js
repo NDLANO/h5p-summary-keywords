@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import {useKeywordsContext} from 'context/KeywordsContext';
+import { useKeywordsContext } from 'context/KeywordsContext';
 import KeywordsList from '../KeywordsList/KeywordsList';
 import Essay from '../Essay/Essay';
 import Footer from '../Footer/Footer';

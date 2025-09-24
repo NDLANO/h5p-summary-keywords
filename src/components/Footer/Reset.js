@@ -1,5 +1,5 @@
-import React, {useMemo, useRef, useState} from 'react';
-import {useKeywordsContext} from 'context/KeywordsContext';
+import React, { useMemo, useRef, useState } from 'react';
+import { useKeywordsContext } from 'context/KeywordsContext';
 import Popover from '../Popover/Popover';
 
 function Reset() {

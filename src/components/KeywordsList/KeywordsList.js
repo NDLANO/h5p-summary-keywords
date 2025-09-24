@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Keywords from '../Keywords/Keywords';
-import {useKeywordsContext} from 'context/KeywordsContext';
+import { useKeywordsContext } from 'context/KeywordsContext';
 
 function KeywordsList() {
 
@@ -44,7 +44,7 @@ function KeywordsList() {
 
   const textAddKeyword = translate('addKeyword', null);
   const textKeywordsLeft = translate(
-    'keywordsLeft', {':num': Math.max(numberOfKeywords - keywordList.length, 0)}
+    'keywordsLeft', { ':num': Math.max(numberOfKeywords - keywordList.length, 0) }
   );
 
   return (

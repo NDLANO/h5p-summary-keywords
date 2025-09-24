@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowContainer, Popover as TinyPopover} from 'react-tiny-popover';
+import { ArrowContainer, Popover as TinyPopover } from 'react-tiny-popover';
 import PropTypes from 'prop-types';
 
 const Popover = ({

@@ -1,8 +1,8 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 
 const KeywordsContext = React.createContext();
 
-function KeywordsContextProvider({children, value}) {
+function KeywordsContextProvider({ children, value }) {
   return (
     <KeywordsContext.Provider value={value}>
       {children}

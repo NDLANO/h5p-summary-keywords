@@ -1,4 +1,4 @@
-import {escape, decode} from 'he';
+import { escape, decode } from 'he';
 
 export function debounce(func, wait, immediate) {
   let timeout;

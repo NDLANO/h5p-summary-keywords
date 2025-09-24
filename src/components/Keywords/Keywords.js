@@ -1,9 +1,9 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import {debounce} from '../utils';
+import { debounce } from '../utils';
 import classnames from 'classnames';
 
-function Keywords({keyword, onChange, keywordPlaceholder, addKeyword, ariaDelete, onDelete}) {
+function Keywords({ keyword, onChange, keywordPlaceholder, addKeyword, ariaDelete, onDelete }) {
 
   const [inEditMode, toggleEditMode] = useState(true);
   const [isUpdate, setUpdate] = useState(false);
@@ -53,6 +53,7 @@ function Keywords({keyword, onChange, keywordPlaceholder, addKeyword, ariaDelete
           className={classnames('h5p-keywords-keyword', {
             'hidden': !inEditMode
           })}
+          aria-label={keywordPlaceholder}
         >
           <input
             ref={inputRef}
