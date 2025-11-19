@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { debounce } from '../utils';
+import { debounce } from '../utils.js';
 import classnames from 'classnames';
 
 function Keywords({ keyword, onChange, keywordPlaceholder, addKeyword, ariaDelete, onDelete }) {

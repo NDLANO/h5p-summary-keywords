@@ -1,6 +1,6 @@
 import React, { useMemo, useRef, useState } from 'react';
-import { useKeywordsContext } from 'context/KeywordsContext';
-import Popover from '../Popover/Popover';
+import { useKeywordsContext } from './../../context/KeywordsContext.js';
+import Popover from '../Popover/Popover.js';
 
 function Reset() {
 

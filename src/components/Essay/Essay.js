@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useKeywordsContext } from 'context/KeywordsContext';
+import { useKeywordsContext } from './../../context/KeywordsContext.js';
 import parseHTML from 'html-react-parser';
 
 function Essay() {

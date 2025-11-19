@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from 'react';
-import { useKeywordsContext } from 'context/KeywordsContext';
-import KeywordsList from '../KeywordsList/KeywordsList';
-import Essay from '../Essay/Essay';
-import Footer from '../Footer/Footer';
-import Media from '../Media/Media';
+import { useKeywordsContext } from './../../context/KeywordsContext.js';
+import KeywordsList from '../KeywordsList/KeywordsList.js';
+import Essay from '../Essay/Essay.js';
+import Footer from '../Footer/Footer.js';
+import Media from '../Media/Media.js';
 import parseHTML from 'html-react-parser';
 
 function Surface() {
