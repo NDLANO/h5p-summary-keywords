@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useRef, useEffect } from 'react';
-import { useKeywordsContext } from 'context/KeywordsContext';
-import { escapeHTML, stripHTML } from 'components/utils';
+import { useKeywordsContext } from './../../context/KeywordsContext.js';
+import { escapeHTML, stripHTML } from './../../components/utils.js';
 
 function Export() {
 
@@ -18,7 +18,7 @@ function Export() {
 
   function getExportPreview() {
     const documentExportTemplate =
-            '<section class="export-preview">' +
+      '<section class="export-preview">' +
             '<div class="page-header" role="heading" tabindex="-1">' +
             '<div class="page-title h1">{{mainTitle}}</div>' +
             '</div>' +

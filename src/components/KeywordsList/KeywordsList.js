@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Keywords from '../Keywords/Keywords';
-import { useKeywordsContext } from 'context/KeywordsContext';
+import Keywords from '../Keywords/Keywords.js';
+import { useKeywordsContext } from './../../context/KeywordsContext.js';
 
 function KeywordsList() {
 

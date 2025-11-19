@@ -97,7 +97,7 @@ const SummaryKeywordsClassnames = {
 /**
  * Get list of classname and conditions for when to add the classname to the content type
  *
- * @return {[{className: string, shouldAdd: (function(*): boolean)}, {className: string, shouldAdd: (function(*): boolean|boolean)}, {className: string, shouldAdd: (function(*): boolean)}]}
+ * @return {Array<{className: string, shouldAdd: function}>}
  */
 export const breakpoints = () => {
   return [

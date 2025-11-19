@@ -1,10 +1,10 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { KeywordsContextProvider } from 'context/KeywordsContext';
-import Surface from 'components/Surface/Surface';
-import 'components/Keywords.scss';
-import 'fonts/H5PReflectionFont.scss';
-import { breakpoints, getRatio, sanitizeParams } from 'components/utils';
+import { KeywordsContextProvider } from './context/KeywordsContext.js';
+import Surface from './components/Surface/Surface.js';
+import './components/Keywords.scss';
+import './fonts/H5PReflectionFont.scss';
+import { breakpoints, getRatio, sanitizeParams } from './components/utils.js';
 
 // Load library
 H5P.SummaryKeywords = (function () {

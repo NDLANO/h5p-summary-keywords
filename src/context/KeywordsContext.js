@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 
 const KeywordsContext = React.createContext();
 
@@ -17,6 +18,11 @@ function useKeywordsContext() {
   }
   return context;
 }
+
+KeywordsContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+  value: PropTypes.any.isRequired,
+};
 
 export {
   KeywordsContextProvider,
