@@ -42,8 +42,8 @@
     "he": "^1.2.0",
     "html-react-parser": "^5.2.10",
     "prop-types": "^15.8.1",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "react-tiny-popover": "^8.1.6"
   },
   "browserslist": "> 0.5%, last 2 versions, Firefox ESR, not dead",
