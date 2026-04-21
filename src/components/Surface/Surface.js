@@ -23,7 +23,9 @@ function Surface() {
   } = context;
 
   useEffect(() => {
-    const filterResourceList = (element) => Object.keys(element).length !== 0 && element.constructor === Object;
+    const filterResourceList = (element) => {
+      return Object.keys(element).length !== 0 && element.constructor === Object && element.title;
+    };
     if (resourcesList.params.resourceList && resourcesList.params.resourceList.filter(filterResourceList).length > 0) {
       const resourceList = new H5P.ResourceList(resourcesList.params, id, language);
       resourceList.attach(resourceContainer.current);
