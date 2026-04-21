@@ -1,6 +1,6 @@
 {
   "name": "h5p-summary-keywords",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "",
   "keywords": [
     "h5p"
@@ -18,7 +18,7 @@
   "author": "NDLA (https://ndla.no)",
   "license": "MIT",
   "devDependencies": {
-    "@axe-core/react": "^4.11.1",
+    "@axe-core/react": "^4.11.2",
     "@babel/cli": "^7.28.6",
     "@babel/core": "^7.29.0",
     "@babel/eslint-parser": "^7.28.6",
@@ -40,7 +40,7 @@
   "dependencies": {
     "classnames": "^2.5.1",
     "he": "^1.2.0",
-    "html-react-parser": "^5.2.17",
+    "html-react-parser": "^6.0.1",
     "prop-types": "^15.8.1",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
