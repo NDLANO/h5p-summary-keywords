@@ -40,7 +40,7 @@ function Export() {
             '{{/hasResources}}' +
             '</section>';
 
-    return Mustache.render(documentExportTemplate, exportObject);
+    return window.Mustache.render(documentExportTemplate, exportObject);
   }
 
   function attachExport() {
