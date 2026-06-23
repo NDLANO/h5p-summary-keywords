@@ -18,7 +18,7 @@
   "author": "NDLA (https://ndla.no)",
   "license": "MIT",
   "devDependencies": {
-    "@axe-core/react": "^4.11.3",
+    "@axe-core/react": "^4.12.1",
     "@babel/cli": "^7.29.7",
     "@babel/core": "^7.29.7",
     "@babel/eslint-parser": "^7.29.7",
