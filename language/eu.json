@@ -1,150 +1,150 @@
 {
   "semantics": [
     {
-      "label": "Header"
+      "label": "Goiburua"
     },
     {
-      "label": "Task description"
+      "label": "Zereginaren deskribapena"
     },
     {
-      "label": "Embedded resource",
+      "label": "Txertaturiko baliabidea",
       "fields": [
         {
-          "label": "Highlighted resource",
-          "description": "Optional resource to display above the keywords."
+          "label": "Nabarmendutako baliabidea",
+          "description": "Gako-hitzen gainean bistaratzeko aukerako baliabidea."
         }
       ]
     },
     {
-      "label": "Essay",
-      "default": "Essay"
+      "label": "Saiakera",
+      "default": "Saiakera"
     },
     {
-      "label": "Essay instruction"
+      "label": "Saiakeraren instrukzioa"
     },
     {
-      "label": "Resources",
+      "label": "Baliabideak",
       "fields": [
         {
-          "label": "Resources",
-          "description": "Optional links to resources."
+          "label": "Baliabideak",
+          "description": "Baliabideetarako aukerako estekak."
         }
       ]
     },
     {
-      "label": "Behavioural settings",
-      "description": "These options will let you control the behaviour.",
+      "label": "Jokabide-ezarpenak",
+      "description": "Aukera hauek jokabidea kontrolatzeko aukera emango dizute.",
       "fields": [
         {
-          "label": "Enable retry?",
-          "description": "Tick off this if you want the user to be able to retry"
+          "label": "Berriro saiatzea gaitu?",
+          "description": "Markatu hau erabiltzaileak berriro saiatu ahal izatea nahi baduzu"
         },
         {
-          "label": "Number of keywords",
-          "description": "Set the number of keywords the user has to provide"
+          "label": "Gako-hitzen kopurua",
+          "description": "Ezarri erabiltzaileak eman behar dituen hitz gako kopurua"
         },
         {
-          "label": "Allow the user to exceed the maximum number of keywords"
+          "label": "Baimendu erabiltzaileari gehienezko gako-hitzen kopurua gainditzea"
         }
       ]
     },
     {
-      "label": "Localize",
+      "label": "Lokalizatu",
       "fields": [
         {
-          "label": "Label for the \"Resources\"-button",
-          "default": "Resources"
+          "label": "\"Baliabideak\" botoiaren etiketa",
+          "default": "Baliabideak"
         },
         {
-          "label": "Label for the \"Restart\"-button",
-          "default": "Restart"
+          "label": "\"Berrabiarazi\" botoiaren etiketa",
+          "default": "Hasi berriro"
         },
         {
-          "label": "Label for the \"Continue\"-button",
-          "default": "Continue"
+          "label": "\"Jarraitu\" botoiaren etiketa",
+          "default": "Jarraitu"
         },
         {
-          "label": "Label for the \"Cancel\"-button",
-          "default": "Cancel"
+          "label": "\"Utzi\" botoiaren etiketa",
+          "default": "Utzi"
         },
         {
-          "label": "Label for the \"Add keyword\"-button",
-          "default": "Add a keyword"
+          "label": "\"Gehitu gako-hitza\" botoiaren etiketa",
+          "default": "Gehitu gako-hitz bat"
         },
         {
-          "label": "Inform the user that data will be lost if he/she continues",
-          "default": "If you continue all your changes will be lost"
+          "label": "Jarraituz gero, datuak galduko direla jakinarazi erabiltzaileari",
+          "default": "Jarraitzen baduzu, zure aldaketa guztiak galduko dira"
         },
         {
-          "label": "Label displaying the number of keywords left",
-          "description": "Available variables are :num",
-          "default": ":num keywords left"
+          "label": "Geratzen den gako-hitzen kopurua erakusten duen etiketa",
+          "description": "Aldagai erabilgarriak: num",
+          "default": ":num gako-hitz geratzen dira"
         },
         {
-          "label": "Placeholder for keyword",
-          "default": "Type a keyword..."
+          "label": "Gako-hitzerako berezko testua",
+          "default": "Idatzi gako-hitz bat..."
         },
         {
-          "label": "Placeholder in the essay textbox",
-          "default": "Type your answer here"
+          "label": "Saiakeren testu-kutxaren berezko testua",
+          "default": "Idatzi zure erantzuna hemen"
         },
         {
-          "label": "Text displayed when no keywords are added",
-          "default": "No keywords added"
+          "label": "Hitz gakorik gehitzen ez denean bistaratzen den testua",
+          "default": "Ez da gako-hitzik gehitu"
         }
       ]
     },
     {
       "fields": [
         {
-          "label": "Label for \"Create document\"-button",
-          "default": "Create document"
+          "label": "\"Sortu dokumentua\" botoiaren etiketa",
+          "default": "Sortu dokumentua"
         },
         {
-          "label": "Label on \"Export\" button",
-          "default": "Export"
+          "label": "Etiketa \"Esportatu\" botoian",
+          "default": "Esportatu"
         },
         {
-          "label": "Label on \"Select all\" button",
-          "default": "Select all"
+          "label": "Etiketa \"Hautatu guztiak\" botoian",
+          "default": "Hautatu guztiak"
         },
         {
-          "label": "Header for keywords",
-          "default": "Keywords"
+          "label": "Gako-hitzen goiburua",
+          "default": "Gako-hitzak"
         },
         {
-          "default": "Resources",
-          "label": "Header above the \"Resource\" table"
+          "default": "Baliabideak",
+          "label": "\"Baliabide\" taularen gaineko goiburua"
         },
         {
-          "default": "Title",
-          "label": "Title header in resource table"
+          "default": "Izenburua",
+          "label": "Izenburuaren goiburua baliabideen taulan"
         },
         {
-          "label": "Intro header in resource table",
-          "default": "Intro"
+          "label": "Baliabideen taulako sarrerako goiburua",
+          "default": "Sarrera"
         },
         {
-          "label": "Url header in resource table",
-          "default": "Url"
+          "label": "Baliabideen taulako URL goiburua",
+          "default": "URL"
         },
         {
-          "label": "Label when no resources are found",
-          "default": "No resources"
+          "label": "Baliabiderik aurkitzen ez denerako etiketa",
+          "default": "Baliabiderik ez"
         }
       ],
-      "label": "Resource report"
+      "label": "Baliabideen txostena"
     },
     {
-      "label": "Accessibility",
+      "label": "Irisgarritasuna",
       "fields": [
         {
-          "label": "Used instead of 'Close'-icon",
-          "default": "Close"
+          "label": "\"Itxi\" ikonoaren ordez erabiltzen da",
+          "default": "Itxi"
         },
         {
-          "label": "Used instead of 'Delete'-icon",
-          "default": "Delete"
+          "label": "\"Ezabatu\" ikonoaren ordez erabiltzen da",
+          "default": "Ezabatu"
         }
       ]
     }

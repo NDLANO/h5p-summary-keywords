@@ -17,30 +17,30 @@
     },
     {
       "label": "Rašinys",
-      "default": "Essay"
+      "default": "Esė"
     },
     {
-      "label": "Essay instruction"
+      "label": "Esė instrukcija"
     },
     {
-      "label": "Resources",
+      "label": "Ištekliai",
       "fields": [
         {
-          "label": "Resources",
-          "description": "Optional links to resources."
+          "label": "Ištekliai",
+          "description": "Pasirenkamos nuorodos į išteklius."
         }
       ]
     },
     {
-      "label": "Behavioural settings",
-      "description": "These options will let you control the behaviour.",
+      "label": "Veikimo nustatymai",
+      "description": "Šios parinktys leis jums valdyti veikimą.",
       "fields": [
         {
-          "label": "Enable retry?",
-          "description": "Tick off this if you want the user to be able to retry"
+          "label": "Įjungti bandymą iš naujo?",
+          "description": "Pažymėkite tai, jei norite, kad naudotojas galėtų bandyti dar kartą"
         },
         {
-          "label": "Number of keywords",
+          "label": "Raktažodžių kiekis",
           "description": "Set the number of keywords the user has to provide"
         },
         {
@@ -49,15 +49,15 @@
       ]
     },
     {
-      "label": "Localize",
+      "label": "Lokalizuoti",
       "fields": [
         {
-          "label": "Label for the \"Resources\"-button",
-          "default": "Resources"
+          "label": "Mygtuko „Ištekliai“ pavadinimas",
+          "default": "Ištekliai"
         },
         {
           "label": "Label for the \"Restart\"-button",
-          "default": "Restart"
+          "default": "Perkrauti"
         },
         {
           "label": "Label for the \"Continue\"-button",
@@ -69,11 +69,11 @@
         },
         {
           "label": "Label for the \"Add keyword\"-button",
-          "default": "Add a keyword"
+          "default": "Pridėti raktažodį"
         },
         {
           "label": "Inform the user that data will be lost if he/she continues",
-          "default": "If you continue all your changes will be lost"
+          "default": "Jei tęsite, visi pakeitimai bus prarasti"
         },
         {
           "label": "Label displaying the number of keywords left",
@@ -140,7 +140,7 @@
       "fields": [
         {
           "label": "Used instead of 'Close'-icon",
-          "default": "Close"
+          "default": "Uždaryti"
         },
         {
           "label": "Used instead of 'Delete'-icon",
