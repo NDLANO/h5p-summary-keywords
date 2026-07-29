@@ -43,9 +43,6 @@ function KeywordsList() {
   }
 
   const textAddKeyword = translate('addKeyword', null);
-  const textKeywordsLeft = translate(
-    'keywordsLeft', { ':num': Math.max(numberOfKeywords - keywordList.length, 0) }
-  );
 
   return (
     <section className={'h5p-keywords-keywordslist'}>
@@ -67,7 +64,7 @@ function KeywordsList() {
       </div>
       <button
         className={'h5p-keywords-add-keyword'}
-        aria-label={`${textAddKeyword}. ${textKeywordsLeft}`}
+        aria-label={`${textAddKeyword}`}
         type={'button'}
         onClick={addKeyword}
         aria-disabled={isAddingDisabled()}
@@ -78,9 +75,6 @@ function KeywordsList() {
           {textAddKeyword}
         </div>
       </button>
-      <div className={'h5p-keywords-keywords-left'}>
-        {textKeywordsLeft}
-      </div>
     </section>
   );
 }

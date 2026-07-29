@@ -76,11 +76,6 @@
           "default": "Hvis du fortsetter vil alle data gå tapt."
         },
         {
-          "label": "Tekst som viser antall gjennstående nøkkelord",
-          "description": "Tilgjengelige variabler er :num",
-          "default": ":num gjenstående nøkkelord"
-        },
-        {
           "label": "Plassholder for nøkkelord",
           "default": "Skriv et nøkkelord..."
         },

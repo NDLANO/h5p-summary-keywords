@@ -76,11 +76,6 @@
           "default": "If you continue all your changes will be lost"
         },
         {
-          "label": "Label displaying the number of keywords left",
-          "description": "Available variables are :num",
-          "default": ":num keywords left"
-        },
-        {
           "label": "Placeholder for keyword",
           "default": "Type a keyword..."
         },

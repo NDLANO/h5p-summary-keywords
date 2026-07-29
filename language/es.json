@@ -75,11 +75,6 @@
           "default": "Si continúas, se perderán todos tus cambios"
         },
         {
-          "description": "Las variables disponibles son :num",
-          "default": ":num palabras clave restantes",
-          "label": "Etiqueta que muestra el número de palabras clave restantes"
-        },
-        {
           "label": "Texto por defecto para palabra clave",
           "default": "Escribe una palabra clave..."
         },

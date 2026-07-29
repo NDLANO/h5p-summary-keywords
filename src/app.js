@@ -41,7 +41,6 @@ H5P.SummaryKeywords = (function () {
       delete: 'Delete',
       ifYouContinueAllYourChangesWillBeLost: 'If you continue all your changes will be lost.',
       close: 'Close',
-      keywordsLeft: ':num keywords left',
       essayHeader: 'Essay',
       keywordPlaceholder: 'Type a keyword...',
       continue: 'Continue',

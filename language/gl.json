@@ -75,11 +75,6 @@
           "default": "Perderanse todos os teus cambios se continúas"
         },
         {
-          "label": "Etiqueta que amosa o número de palabras chave restantes",
-          "description": "As variables dispoñibles son:num",
-          "default": ":num palabras chave restantes"
-        },
-        {
           "label": "Marcador de posición para a palabra chave",
           "default": "Escribe unha palabra chave..."
         },
