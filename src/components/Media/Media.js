@@ -6,7 +6,7 @@ function Media({ mediaParams, id, onLoaded }) {
   const mediaContainer = useRef();
 
   useEffect(() => {
-    if ( typeof mediaParams === 'object' && mediaParams.parmams && Object.keys(mediaParams).length) {
+    if ( typeof mediaParams === 'object' && mediaParams.params && Object.keys(mediaParams.params).length) {
       try {
         const media = H5P.newRunnable(mediaParams, id, H5P.jQuery(mediaContainer.current));
         H5P.on(media, 'loaded', onLoaded);
@@ -19,7 +19,7 @@ function Media({ mediaParams, id, onLoaded }) {
 
   return (
     <>
-      {typeof mediaParams === 'object' && (
+      {typeof mediaParams === 'object' && mediaParams.params && Object.keys(mediaParams.params).length > 0 && (
         <div
           className={'h5p-keywords-media'}
           ref={mediaContainer}
