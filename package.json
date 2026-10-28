@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
-    "he": "^1.2.0",
+    "he": "^2.0.0",
     "html-react-parser": "^6.1.8",
     "prop-types": "^15.8.1",
     "react": "^19.3.0",
